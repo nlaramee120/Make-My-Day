@@ -1,1 +1,48 @@
 /*Skeleton Basic Styling*/
+
+.titleheader {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.titlep {
+    color: white;
+    text-shadow: 3px 3px black;
+    text-align: center;
+    font-size: 30px;
+}
+
+.titleul {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
+.titlecontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#titleimage {
+    background-image: url(https://www.sydneyoperahouse.com/content/dam/soh/footer/venue-hire/outdoor-events/OutdoorEvents_TameImpala_1600x1067.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#titlebutton {
+    font-size: 30px;
+}
+
+ul {
+    width: 100%;
+}
+
+.titlecenter {
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
