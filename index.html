@@ -8,6 +8,8 @@
 
     <!-- skeleton framework css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 
     <title>Event Searcher</title>
 
@@ -24,20 +26,74 @@
 
     <!-- event content begins here, 2 columns with content cards, 3rd row filte box or modal form & weather box underneath -->
 
+    <form>
+        <div class="row">
+          <div class="eight columns">
+            <!-- <label for="exampleEmailInput">Your email</label> -->
+            <input class="u-full-width" type="email" placeholder="Enter your ZIP code" id="inputZip">
+          </div>
+        <button class="button-primary"><i id="icon" class="fas fa-search-location fa-2x"></i></button>
+      </form>
+
     <div class="container-fluid">
         <div class="row">
-            <div class="eight columns" style="background-color: cornflowerblue; border: solid black;">
-                
+            <div class="eight columns" style="background-color: cornflowerblue; border: solid black; margin: 8px;">
                 <h2>Events Near You</h2>
                 <h4>dcode</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
 
+            <div class="three columns" style="background-color: rgb(133, 182, 133); border: solid black; margin: 8px 8px 8px 0;">
+                <h2>Filters</h2>
+                <p>
+                    <strong>bold</strong>
+                </p>
+
+                <p>
+                    <u>underline</u>
+                </p>
+
+                <p>
+                    <em>italic</em>
+                </p>
+
+                <p>
+                    <a href="a"> link </a>
                 </p>
 
             </div>
 
-            <div class="four columns" style="background-color: rgb(133, 182, 133); border: solid, black;">
-                <h5>dcode on Youtube</h5>
+            <div class="eight columns" style="background-color: cornflowerblue; border: solid black; margin: 0 8px 8px 8px;">
+                <table class="u-full-width">
+                    <thead>
+                        <h2> Make My Day</h2>
+                      <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Address</th>
+                      </tr>
+                    </thead>
+                    <tbody class="savedEvents">
+                      <tr>
+                        <td>Event 1</td>
+                        <td>9/20/2021</td>
+                        <td>5:00pm</td>
+                        <td>111 W Monroe Chicago IL</td>
+                      </tr>
+                      <tr>
+                        <td>Event 2</td>
+                        <td>9/20/2021</td>
+                        <td>7:00pm</td>
+                        <td>222 East Lake St Glenview IL</td>
+                      </tr>
+                    </tbody>
+                  </table>
+          </div>
+
+            <div class="three columns" style="background-color: rgb(133, 182, 133); border: solid black; margin: 0 8px 8px 0;">
+                <h2>Weather</h2>
                 <p>
                     <strong>bold</strong>
                 </p>
