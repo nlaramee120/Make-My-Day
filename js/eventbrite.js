@@ -16,10 +16,12 @@ class EventBrite {
         //wait for a response and return as json
 
         const events = await eventsResponse.json();
+        console.log(eventsResponse);
         return {
             events
         }
     }
+
     //get categories from API
 
    async getCategoriesAPI(){
