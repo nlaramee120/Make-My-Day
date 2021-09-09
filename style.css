@@ -76,7 +76,9 @@ ul {
 
 
 
-
+h1 {
+    text-align: center;
+}
 
 .card-text {
     font-size: 15px;
@@ -84,4 +86,10 @@ ul {
 
 .card {
     width: 18rem;
+    margin: auto;
+    height: auto;
+}
+
+.nearEvents {
+    margin: auto;
 }

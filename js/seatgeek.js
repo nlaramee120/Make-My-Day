@@ -1,5 +1,7 @@
 var userInput = document.querySelector(".userInput");
 var userBtn = document.querySelector(".userBtn");
+var url = 'https://api.seatgeek.com/2/events?geoip=true&range=20mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
+
 
 
 var url =
@@ -40,14 +42,11 @@ function seatGeek() {
         newCardBody.append("<h3 class='card-title'>" + title + "<h5>");
 
         var date = data.events[i].datetime_local;
-        newCardBody.append(
-          "<p class='badge badge-secondary'>" + "Date: " + date + "<p>"
-        );
+
+        newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
         var location = data.events[i].venue.name;
-        newCardBody.append(
-          "<p class='badge badge-secondary'>" + "Location: " + location + "<p>"
-        );
+        newCardBody.append("<p class='card-text'>" + "Location: " + location + "<p>");
 
         var getTicks = data.events[i].url;
         newCardBody.append(
