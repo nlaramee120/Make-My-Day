@@ -1,4 +1,4 @@
-/* class UI {
+ class UI {
 
     constructor(){
 
@@ -119,5 +119,3 @@
         }
     }
 }
-
-*/
