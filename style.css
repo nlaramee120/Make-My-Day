@@ -1,5 +1,11 @@
 /*Skeleton Basic Styling*/
 
+.classBody {
+    background-image: url(https://cdn.aarp.net/content/dam/aarp/entertainment/music/2018/03/1140-concert-ticket-prices.imgcache.rev.web.877.500.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .titleheader {
     color: white;
     font-size: 100px;
