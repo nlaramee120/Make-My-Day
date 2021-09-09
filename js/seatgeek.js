@@ -6,38 +6,40 @@ function seatGeek () {
   fetch(url, {
     method: "GET",
   })
-    .then(function (events) {
-      return events.json();
+    .then(function (data) {
+      return data.json();
     })
     .then(function (data) {
         console.log(data);
+    
+    for (i = 0; i < 5; i++) {    
+
+        var newCard = $("<div>").attr("class", "card");
+        $(".nearEvents").append(newCard);
+        var newCardBody = $("<div>").attr("class", "card-body")
+        $(".card").append(newCardBody)
+        console.log("it works");
+
+        var img = data.events[i].performers[0].image;
+        // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
+        newCardBody.append("<img class='img-fluid mb-2' src=" + "'" + img + "'" + "alt=" + "test" + "></img>");
+
+        var title = data.events[i].short_title;
+        newCardBody.append("<h3 class='card-title'>" + title + "<h5>");
+
+        var date = data.events[i].datetime_local;
+        newCardBody.append("<p class='badge badge-secondary'>" + "Date: " + date + "<p>");
+
+        var location = data.events[i].venue.name;
+        newCardBody.append("<p class='badge badge-secondary'>" + "Location: " + location + "<p>");
+
+        var getTicks = data.events[i].url;
+        newCardBody.append("<a class='btn btn-primary btn-dlock mt-4' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>");
+
+        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4'>" + "Save Event!" + "</button>");
+
+    }
     })
 }
 
 seatGeek();
-
-
-
-events.forEach(eventInfo => {
-            
-    HTMLTemplate += `
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <div class"card-body">
-                    <img class-"img-fluid mb-2" src="${eventInfo.logo !== null? response.events.performers[0].image : ''}"
-                </div>
-                <div class"card-body">
-                    <div class="card-text">
-                        <h2 class="text-center card-title"> ${response.events.title} </h2>
-                        <span class="badge badge-secondary"> Date & Time: ${response.events.datetime_local} </span>
-                        <span class="badge badge-secondary"> Location: ${response.events.venue} </span>
-                        <a href= "${response.events.url}" target="_blank" class="btn btn-primary btn-dlock mt-4">Get Tickets</a>
-                        <button type="button">Save Event!</button> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-});
-
-this.result.innerHTML = HTMLTemplate;
