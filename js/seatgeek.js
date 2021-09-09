@@ -1,4 +1,4 @@
-var url = 'https://api.seatgeek.com/2/events?client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
+var url = 'https://api.seatgeek.com/2/events?geoip=true&range=20mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
 
 function seatGeek () {
 // e.preventDefault();
@@ -28,10 +28,10 @@ function seatGeek () {
         newCardBody.append("<h3 class='card-title'>" + title + "<h5>");
 
         var date = data.events[i].datetime_local;
-        newCardBody.append("<p class='badge badge-secondary'>" + "Date: " + date + "<p>");
+        newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
         var location = data.events[i].venue.name;
-        newCardBody.append("<p class='badge badge-secondary'>" + "Location: " + location + "<p>");
+        newCardBody.append("<p class='card-text'>" + "Location: " + location + "<p>");
 
         var getTicks = data.events[i].url;
         newCardBody.append("<a class='btn btn-primary btn-dlock mt-4' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>");
