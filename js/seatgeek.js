@@ -73,7 +73,35 @@ fetch(urlSearchBar, {
 
 
 
+var openWeatherKey = "3a150e01056da8ad0b1ee8083da97feb";
+var openWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=${openWeatherKey}&units=imperial`;
 
+fetch(openWeatherUrl, {
+  method: "GET",
+})
+  .then(function (response) {
+    return response.json();
+  })
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  .then(function (response) {
+    var newCard = $(".card-body").append("<div class='col-sm-7 bg-primary text-white rounded'></div>");
+    // newCard.empty();
+
+    var currentName = newCard.append("<p>");
+    newCard.append(currentName);
+
+    var time = new Date(response.dt * 1000);
+    currentName.append(response.name + " " + time.toLocaleDateString("en-US"));
+    currentName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
+
+    var currentWeather = currentName.append("<p>");
+    currentName.append(currentWeather);
+    currentWeather.append("<p>" + "Temperature: " + response.main.temp + " F" + "</p>");
+    currentWeather.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
+    currentWeather.append("<p>" + "Wind: " + response.wind.speed + " mph" + "</p>");
+  })
 
 
 
