@@ -3,6 +3,7 @@ $(document).ready(function()  {
 var userInput = $(".userInput").val();
 var userBtn = document.querySelector(".userBtn");
 var url = 'https://api.seatgeek.com/2/events?geoip=true&range=100mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
+var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
 
 
 userBtn.addEventListener("click", (e) => {
@@ -12,6 +13,9 @@ userBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log(userInput);
   var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
+
+
 fetch(urlSearchBar, {
   method: "GET",
 })
@@ -20,6 +24,7 @@ fetch(urlSearchBar, {
   })
   .then(function (data) {
     console.log(data)
+
 
     var newCard = $("<div>").attr("class", "card");
       $(".nearEvents").append(newCard);
@@ -64,83 +69,33 @@ fetch(urlSearchBar, {
 
     }
   })
-})
 
+  fetch(urlFiveDay,  {
+      method: "GET",
+    })
+    .then(function (response) {
+      return response.json()
+    })
 
+    .then(function (response) {
+       $(".appendedAll").remove();
 
-
-
-
-var key = "3a150e01056da8ad0b1ee8083da97feb";
-
-function fiveDay() {
-  var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=chicago" + "&appid=" + key + "&units=imperial";
-  // e.preventDefault();
-
-  fetch(urlFiveDay, {
-    method: "GET",
+            for (i = 0; i < 5; i++) {
+              var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
+              $(".fiveDay").append(newItem);
+      
+              var date = new Date(response.list[i * 8].dt * 1000);
+              newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
+      
+              var iconCode = response.list[i * 8].weather[0].icon;
+              var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+              newItem.append($("<img>").attr("src", iconURL));
+      
+              var temp = response.list[i * 8].main.temp;
+              newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
+    }
   })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      $(".appendedAll").remove();
-
-      for (i = 0; i < 5; i++) {
-        var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
-        $(".fiveDay").append(newItem);
-
-        var date = new Date(response.list[i * 8].dt * 1000);
-        newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
-
-        var iconCode = response.list[i * 8].weather[0].icon;
-        var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-        newItem.append($("<img>").attr("src", iconURL));
-
-        var temp = response.list[i * 8].main.temp;
-        newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
-      }
-    })
-};
-
-fiveDay();
-
-
-
-// var openWeatherKey = "3a150e01056da8ad0b1ee8083da97feb";
-// var openWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=${openWeatherKey}&units=imperial`;
-
-// fetch(openWeatherUrl, {
-//   method: "GET",
-// })
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   // .then(function (response) {
-//   //   console.log(response);
-//   // })
-//   .then(function (response) {
-//     var newCard = $(".card-body").append("<div class='col-sm-7 bg-primary text-white rounded'></div>");
-//     // newCard.empty();
-
-//     var currentName = newCard.append("<p>");
-//     newCard.append(currentName);
-
-//     var time = new Date(response.dt * 1000);
-//     currentName.append(response.name + " " + time.toLocaleDateString("en-US"));
-//     currentName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
-
-//     var currentWeather = currentName.append("<p>");
-//     currentName.append(currentWeather);
-//     currentWeather.append("<p>" + "Temperature: " + response.main.temp + " F" + "</p>");
-//     currentWeather.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
-//     currentWeather.append("<p>" + "Wind: " + response.wind.speed + " mph" + "</p>");
-//   })
-
-
-
-
-
+})
 
 function seatGeek() {
   // e.preventDefault();
@@ -217,25 +172,6 @@ seatGeek();
 // })
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

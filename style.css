@@ -168,3 +168,18 @@ h1 {
     border: 2px solid red;
     margin-top: 55px;
 }  
+
+
+/* this is what I was working on with media query, this makes cards responsive to the window but not mobile ready yet */
+
+@media all and (max-width:900px) {
+   .card-body {
+        max-height: 600px;
+    }
+};
+
+@media all and (min-width:300px) {
+    .card-body .card .card-text{
+        min-height: 152px;
+    }
+};
