@@ -72,15 +72,12 @@ fetch(urlSearchBar, {
 
 
 
-// var searchButton = $("#searchButton");
-// var city = $("#searchInput").val();
 var key = "3a150e01056da8ad0b1ee8083da97feb";
 
 function fiveDay() {
   var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=chicago" + "&appid=" + key + "&units=imperial";
   // e.preventDefault();
 
-  // Begin API fetch and appending of data retrieved
   fetch(urlFiveDay, {
     method: "GET",
   })
@@ -90,7 +87,6 @@ function fiveDay() {
     .then(function (response) {
       $(".appendedAll").remove();
 
-      // For loop to create and append data retrieved for the next consecutive 5 days in separate <divs>
       for (i = 0; i < 5; i++) {
         var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
         $(".fiveDay").append(newItem);
@@ -204,6 +200,8 @@ function seatGeek() {
         );
       }
     });
+
+    
 }
 
 seatGeek();

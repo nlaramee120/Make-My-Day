@@ -85,6 +85,16 @@ h1 {
     text-align: center;
 }
 
+.searchItems {
+    border: 3px solid white;
+    margin: auto;
+  width: 50%;
+}
+
+.userInput {
+    text-align: center;
+}
+
 .card-text {
     font-size: 25px;
 }
