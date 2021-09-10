@@ -4,6 +4,7 @@ var userInput = $(".userInput").val();
 var userBtn = document.querySelector(".userBtn");
 var url = 'https://api.seatgeek.com/2/events?geoip=true&range=100mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
 
+
 userBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
   var clearList = $(".card");
@@ -57,7 +58,7 @@ fetch(urlSearchBar, {
         );
 
         newCardBody.append(
-          "<button type='button' class='btn btn-primary btn-dlock mt-4'>" +
+          "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'>" +
             "Save Event!" +
             "</button>"
         );
@@ -102,10 +103,6 @@ fetch(openWeatherUrl, {
     currentWeather.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
     currentWeather.append("<p>" + "Wind: " + response.wind.speed + " mph" + "</p>");
   })
-
-
-
-
 
 
 
@@ -172,7 +169,16 @@ function seatGeek() {
 
 seatGeek();
 
+var savedList = document.querySelector(".savedList")
+var saveBtn = document.querySelector(".saveBtn")
 
+
+saveBtn.addEventListener("click", () => {
+
+
+  console.log("wow that worked somehow")
+
+})
 
 })
 
