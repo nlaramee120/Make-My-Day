@@ -85,11 +85,19 @@ h1 {
 }
 
 .card {
-    width: 18rem;
+    width: 50rem;
     margin: auto;
     height: auto;
 }
 
+.card-body {
+    text-align: center;
+}
+
 .nearEvents {
     margin: auto;
+}
+
+.saveBtn {
+    display: block;
 }
