@@ -134,7 +134,7 @@ function seatGeek() {
         );
 
         newCardBody.append(
-          "<button type='button' class='btn btn-primary btn-dlock mt-4'>" +
+          "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'>" +
             "Save Event!" +
             "</button>"
         );
@@ -143,6 +143,7 @@ function seatGeek() {
 }
 
 seatGeek();
+
 
 
 })
