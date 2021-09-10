@@ -21,27 +21,34 @@
 <body class="classBody">
 
   <header>
-
     <h1>Event Searcher</h1>
-
   </header>
 
   <form>
-        <div class="row">
-          <div class="eight columns">
-            <input class="u-full-width userInput" type="text" placeholder="Type a city here" id="inputZip">
-          </div>
-        <button id="submitBtn" class="button-primary userBtn"><i id="icon" class="fas fa-search-location fa-2x"></i></button>
-        </div>
-    </form>
+    <div class="row">
+      <div class="eight columns">
+        <input class="u-full-width userInput" type="text" placeholder="Type a city here" id="inputZip">
+      </div>
+      <button id="submitBtn" class="button-primary userBtn"><i id="icon" class="fas fa-search-location fa-2x"></i></button>
+    </div>
+  </form>
 
     <div class="container-fluid">
-        <div class="row eventList">
-                <h2 class="nearEvents">Events Near You</h2>
+
+      <div class="row eventList float-container">
+        <div class="float-child1">
+          <h2 class="nearEvents">Events Near You</h2>
         </div>
+        <div class="fiveDay float-child2">
+        </div>
+      </div>
+
     </div>
-    <div class="fiveDay">
-    </div> 
+
+    <!-- </div class="fiveDayContainer">
+      <div class="fiveDay">
+      </div> 
+    </div> -->
 
     <div>
       <ul class="list-group savedList">

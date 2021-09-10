@@ -80,16 +80,17 @@ ul {
 
 
 
+
 h1 {
     text-align: center;
 }
 
 .card-text {
-    font-size: 15px;
+    font-size: 25px;
 }
 
 .card {
-    width: 50rem;
+    width: 30rem;
     margin: auto;
     height: auto;
 }
@@ -99,9 +100,31 @@ h1 {
 }
 
 .nearEvents {
-    margin: auto;
+    text-align: center;
 }
 
 .saveBtn {
     display: block;
 }
+
+.float-container {
+    border: 3px solid #fff;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+.float-child1 {
+    width: 75%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+}  
+
+.float-child2 {
+    width: 25%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+    margin-top: 55px;
+}  

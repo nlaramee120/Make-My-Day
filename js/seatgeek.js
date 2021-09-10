@@ -92,7 +92,7 @@ function fiveDay() {
 
       // For loop to create and append data retrieved for the next consecutive 5 days in separate <divs>
       for (i = 0; i < 5; i++) {
-        var newItem = $("<div>").attr("class", "col-sm-2 bg-primary text-white rounded appendedAll");
+        var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
         $(".fiveDay").append(newItem);
 
         var date = new Date(response.list[i * 8].dt * 1000);
@@ -181,6 +181,7 @@ function seatGeek() {
         var title = data.events[i].short_title;
         newCardBody.append("<h3 class='card-title'>" + title + "<h5>");
 
+        // var dateConv = moment().format("MMM Do, YYYY, hh:mm:");
         var date = data.events[i].datetime_local;
 
         newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
@@ -207,16 +208,16 @@ function seatGeek() {
 
 seatGeek();
 
-var savedList = document.querySelector(".savedList")
-var saveBtn = document.querySelector(".saveBtn")
+// var savedList = document.querySelector(".savedList")
+// var saveBtn = document.querySelector(".saveBtn")
 
 
-saveBtn.addEventListener("click", () => {
+// saveBtn.addEventListener("click", () => {
 
 
-  console.log("wow that worked somehow")
+//   console.log("wow that worked somehow")
 
-})
+// })
 
 })
 
