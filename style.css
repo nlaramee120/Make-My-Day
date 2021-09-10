@@ -82,6 +82,16 @@ ul {
 
 
 
+
+
+
+
+
+
+
+
+
+
 h1 {
     text-align: center;
 }
@@ -96,26 +106,45 @@ h1 {
     text-align: center;
 }
 
+.card-title {
+    font-size: 30px;
+}
+
 .card-text {
-    font-size: 25px;
+    font-size: 20px;
+}
+
+.img-fluid {
+    width: 100%;
+    border-radius: 5%;
 }
 
 .card {
     width: 30rem;
     margin: auto;
     height: auto;
+    background-color: gray;
 }
 
 .card-body {
     text-align: center;
+    margin: 10px;
+    background-color: darkgray;
+    border-radius: 5%;
 }
 
 .nearEvents {
     text-align: center;
 }
 
+.getTicks {
+    /* background-color: rgb(0, 0, 255); */
+}
+
 .saveBtn {
-    display: block;
+    display: inline;
+    margin: auto;
+    margin-left: 10px;
 }
 
 .float-container {

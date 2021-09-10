@@ -21,9 +21,11 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
-    for (i = 0; i < 5; i++) {
-      var newCard = $("<div>").attr("class", "card");
+    var newCard = $("<div>").attr("class", "card");
       $(".nearEvents").append(newCard);
+
+    for (i = 0; i < 5; i++) {
+
       var newCardBody = $("<div>").attr("class", "card-body");
       $(".card").append(newCardBody);
       console.log("it works");
@@ -51,16 +53,13 @@ fetch(urlSearchBar, {
 
         var getTicks = data.events[i].url;
         newCardBody.append(
-          "<a class='btn btn-primary btn-dlock mt-4' target='_blank' href=" +
+          "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" +
             getTicks +
             ">Get Tickets!" +
             "</a>"
         );
 
-        newCardBody.append(
-          "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'>" +
-            "Save Event!" +
-            "</button>"
+        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
 
     }
@@ -155,9 +154,11 @@ function seatGeek() {
     .then(function (data) {
       console.log(data);
 
-      for (i = 0; i < 5; i++) {
-        var newCard = $("<div>").attr("class", "card");
+      var newCard = $("<div>").attr("class", "card");
         $(".nearEvents").append(newCard);
+
+      for (i = 0; i < 5; i++) {
+        
         var newCardBody = $("<div>").attr("class", "card-body");
         $(".card").append(newCardBody);
         console.log("it works");
@@ -187,16 +188,14 @@ function seatGeek() {
 
         var getTicks = data.events[i].url;
         newCardBody.append(
-          "<a class='btn btn-primary btn-dlock mt-4' target='_blank' href=" +
+          "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" +
             getTicks +
             ">Get Tickets!" +
             "</a>"
         );
 
         newCardBody.append(
-          "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'>" +
-            "Save Event!" +
-            "</button>"
+          "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
       }
     });
