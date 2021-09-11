@@ -83,6 +83,9 @@ fetch(urlSearchBar, {
         );
 
     }
+
+      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
+      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
   })
 
   fetch(urlFiveDay,  {
@@ -185,6 +188,10 @@ function seatGeek() {
           "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
       }
+
+        newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
+        newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+
     });
     
     
