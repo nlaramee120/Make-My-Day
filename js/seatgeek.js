@@ -92,8 +92,10 @@ fetch(urlSearchBar, {
       return response.json()
     })
 
+    
     .then(function (response) {
        $(".appendedAll").remove();
+       $(".float-child2").show();
 
             for (i = 0; i < 5; i++) {
               var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
@@ -203,6 +205,7 @@ function seatGeek() {
   //   .then(function (response) {
       
   //      $(".appendedAll").remove();
+  //      $(".float-child2").show();
 
   //           for (i = 0; i < 5; i++) {
   //             var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
@@ -223,7 +226,6 @@ function seatGeek() {
 }
 
 
-// seatGeek();
 
 
 
