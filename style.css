@@ -5,6 +5,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .titleheader {
@@ -134,10 +137,18 @@ h1 {
     text-align: center;
 }
 
+.classBody {
+    background-color: black;
+}
+
+.flextopPic {
+    display: inline;
+}
+
 .searchItems {
-    border: 3px solid white;
+    border: 3px solid red;
     margin: auto;
-    width: 50%;
+    /* width: 50%; */
 }
 
 .userInput {
@@ -181,10 +192,6 @@ h1 {
     display: none;
 }
 
-.getTicks {
-    /* background-color: rgb(0, 0, 255); */
-}
-
 .saveBtn {
     display: inline;
     margin: auto;
@@ -192,7 +199,7 @@ h1 {
 }
 
 .float-container {
-    border: 3px solid #fff;
+    border: 3px solid blue;
     padding: 20px;
     width: 70%;
     margin: auto;
@@ -210,8 +217,14 @@ h1 {
     float: left;
     padding: 20px;
     border: 2px solid red;
-    margin-top: 55px;
+    margin-top: 80px;
+    background-color: gray;
+    display: none;
 }  
+
+.favEvents {
+    margin: auto;
+}
 
 
 /* this is what I was working on with media query, this makes cards responsive to the window but not mobile ready yet */
