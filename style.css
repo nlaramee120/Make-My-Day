@@ -231,6 +231,10 @@ h1 {
     font-size: 20px;
 }
 
+.showBtn {
+    display: none;
+}
+
 .favEvents {
     margin: auto;
 }
