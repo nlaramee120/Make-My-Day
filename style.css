@@ -173,6 +173,12 @@ h1 {
 
 .nearEvents {
     text-align: center;
+    display: none;
+}
+
+.cityEvents {
+    text-align: center;
+    display: none;
 }
 
 .getTicks {
