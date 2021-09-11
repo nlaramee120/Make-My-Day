@@ -5,7 +5,10 @@ var userBtn = document.querySelector(".userBtn");
 var url = 'https://api.seatgeek.com/2/events?geoip=true&range=100mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
 // var urlGeo = `https://api.openweathermap.org/data/2.5/weather?q=&lat=${response.coord.lat}&lon=${response.coord.lon}&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial`;
 var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
-
+var saveBtn = document.querySelector(".saveBtn");
+var listItem1 = document.querySelector(".listItem1");
+var modal = document.getElementById("myModal");
+var closeModal = document.querySelector(".close");
 
 userBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
@@ -26,6 +29,13 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
+    if (data.status = 404) {
+      modal.style.display = "block";
+    }
+
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
 
     var newCard = $("<div>").attr("class", "card");
       $(".nearEvents").append(newCard);
@@ -157,6 +167,10 @@ function seatGeek() {
     });
     
     
+
+
+
+
   //   fetch(urlGeo,  {
   //     method: "GET",
   //   })
@@ -189,18 +203,20 @@ function seatGeek() {
     
 }
 
+
 seatGeek();
 
-// var savedList = document.querySelector(".savedList")
-// var saveBtn = document.querySelector(".saveBtn")
 
 
-// saveBtn.addEventListener("click", () => {
+$(".saveBtn").delegate("click", function() {
+  console.log("yoyo")
+  listItem1.innerHTML = "hello"
+})
 
 
-//   console.log("wow that worked somehow")
 
-// })
+
+
 
 })
 
