@@ -235,6 +235,10 @@ h1 {
     display: none;
 }
 
+.hiddenPrev {
+    display: none;
+}
+
 .favEvents {
     margin: auto;
 }
