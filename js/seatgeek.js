@@ -51,7 +51,6 @@ fetch(urlSearchBar, {
 
     $(".float-container").show();
     $(".nearEvents").text("Events Near " + userInput);
-    // $(".nearEvents").show();
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -89,13 +88,17 @@ fetch(urlSearchBar, {
             "</a>"
         );
 
-        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
 
-    }
+          let buttonId = "#button" + i;
+          let test = location;
 
-      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
+
+    }
 
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
@@ -165,11 +168,13 @@ fetch(urlSearchBar, {
       modal.style.display = "none";
     }
 
+    showBtn.style.display = "block";
+    hiddenPrev.style.display = "block";
+
     var newCard = $("<div>").attr("class", "card");
 
     $(".float-container").show();
     $(".nearEvents").text("Events Near " + userInput);
-    // $(".nearEvents").show();
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -179,7 +184,6 @@ fetch(urlSearchBar, {
       console.log("it works");
 
       var img = data.events[i].performers[0].image;
-      // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
       newCardBody.append(
         "<img class='img-fluid mb-2' src=" +
           "'" +
@@ -207,13 +211,17 @@ fetch(urlSearchBar, {
             "</a>"
         );
 
-        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
 
-    }
+        let buttonId = "#button" + i;
+          let test = location;
 
-      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
+
+    }
 
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
@@ -283,11 +291,13 @@ fetch(urlSearchBar, {
       modal.style.display = "none";
     }
 
+    showBtn.style.display = "block";
+    hiddenPrev.style.display = "block";
+
     var newCard = $("<div>").attr("class", "card");
 
     $(".float-container").show();
     $(".nearEvents").text("Events Near " + userInput);
-    // $(".nearEvents").show();
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -297,7 +307,6 @@ fetch(urlSearchBar, {
       console.log("it works");
 
       var img = data.events[i].performers[0].image;
-      // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
       newCardBody.append(
         "<img class='img-fluid mb-2' src=" +
           "'" +
@@ -325,13 +334,17 @@ fetch(urlSearchBar, {
             "</a>"
         );
 
-        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
 
-    }
+          let buttonId = "#button" + i;
+          let test = location;
 
-      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
+
+    }
 
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
@@ -395,11 +408,13 @@ function seatGeek() {
     .then(function (data) {
       console.log(data);
 
+      showBtn.style.display = "block";
+      hiddenPrev.style.display = "block";
+
       var newCard = $("<div>").attr("class", "card");
 
         $(".float-container").show();
         $(".nearEvents").text("Events Near You");
-        // $(".nearEvents").show();
         $(".nearEvents").append(newCard);
 
       for (i = 0; i < 5; i++) {
@@ -409,7 +424,6 @@ function seatGeek() {
         console.log("it works");
 
         var img = data.events[i].performers[0].image;
-        // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
         newCardBody.append(
           "<img class='img-fluid mb-2' src=" +
             "'" +
@@ -439,14 +453,16 @@ function seatGeek() {
             "</a>"
         );
 
-        newCardBody.append(
-          "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
+
+          let buttonId = "#button" + i;
+          let test = location;
+
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
       }
-
-        newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-        newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
-
     });
     
     
@@ -491,10 +507,10 @@ function seatGeek() {
 
 
 
-$(".saveBtn").delegate("click", function() {
-  console.log("yoyo")
-  listItem1.innerHTML = "hello"
-})
+// $(".saveBtn").delegate("click", function() {
+//   console.log("yoyo")
+//   listItem1.innerHTML = "hello"
+// })
 
 
 
