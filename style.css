@@ -1,7 +1,7 @@
 /*Skeleton Basic Styling*/
 
 .topPic {
-    background-image: url(./images/toppic1.jpg);
+    background-image: url(./images/new.image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 25rem;
@@ -11,24 +11,27 @@
 }
 
 .titleheader {
-    color: white;
+    color: rgb(181, 243, 157);
+    text-shadow: 3px 3px black;
     font-size: 100px;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 25px;
+    font-family: 'Bangers';
 }
 
 .titlep {
-    color: white;
+    color: rgb(255, 255, 255);
     text-shadow: 3px 3px black;
     text-align: center;
-    font-size: 30px;
+    font-size: 45px;
+    font-family: 'Bangers';
 }
 
 .titleul {
     text-align: center;
     font-size: 30px;
-    color: white;
-    text-shadow: 3px 3px black;
+    color: rgb(132, 202, 243);
+    text-shadow: 1px 1px black;
 }
 
 .titlecontainer {
@@ -38,7 +41,7 @@
 }
 
 #titleimage {
-    background-image: url(https://www.sydneyoperahouse.com/content/dam/soh/footer/venue-hire/outdoor-events/OutdoorEvents_TameImpala_1600x1067.jpg);
+    background-image: url(./images/new.image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
