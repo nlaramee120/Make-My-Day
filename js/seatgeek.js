@@ -4,7 +4,7 @@ var userInput = $(".userInput").val();
 var userBtn = document.querySelector(".userBtn");
 var userGeo = document.querySelector(".locationBtn");
 var url = 'https://api.seatgeek.com/2/events?geoip=true&range=40mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
-// var urlGeo = `https://api.openweathermap.org/data/2.5/weather?q=&lat=${response.coord.lat}&lon=${response.coord.lon}&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial`;
+var urlGeo = 'https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial';
 var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
 var saveBtn = document.querySelector(".saveBtn");
 var listItem1 = document.querySelector(".listItem1");
@@ -50,7 +50,8 @@ fetch(urlSearchBar, {
     var newCard = $("<div>").attr("class", "card");
 
     $(".float-container").show();
-    $(".nearEvents").text("Events Near " + userInput);
+    $(".eventsTitle").show();
+    $(".eventsTitle").text("Events Near " + userInput);
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -60,7 +61,6 @@ fetch(urlSearchBar, {
       console.log("it works");
 
       var img = data.events[i].performers[0].image;
-      // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
       newCardBody.append(
         "<img class='img-fluid mb-2' src=" +
           "'" +
@@ -174,7 +174,8 @@ fetch(urlSearchBar, {
     var newCard = $("<div>").attr("class", "card");
 
     $(".float-container").show();
-    $(".nearEvents").text("Events Near " + userInput);
+    $(".eventsTitle").show();
+    $(".eventsTitle").text("Events Near " + userInput);
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -297,7 +298,8 @@ fetch(urlSearchBar, {
     var newCard = $("<div>").attr("class", "card");
 
     $(".float-container").show();
-    $(".nearEvents").text("Events Near " + userInput);
+    $(".eventsTitle").show();
+    $(".eventsTitle").text("Events Near " + userInput);
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -414,7 +416,8 @@ function seatGeek() {
       var newCard = $("<div>").attr("class", "card");
 
         $(".float-container").show();
-        $(".nearEvents").text("Events Near You");
+        $(".eventsTitle").show();
+        $(".eventsTitle").text("Events Near You");
         $(".nearEvents").append(newCard);
 
       for (i = 0; i < 5; i++) {
@@ -476,9 +479,9 @@ function seatGeek() {
   //   .then(function (response) {
   //     return response.json()
   //   })
-  //   .then(function (response) {
+  //   // .then(function (response) {
      
-  //   })
+  //   // })
 
   //   .then(function (response) {
       
@@ -499,11 +502,8 @@ function seatGeek() {
   //             var temp = response.list[i * 8].main.temp;
   //             newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
   //   }
-  // })
-    
+  // }) 
 }
-
-
 
 
 
