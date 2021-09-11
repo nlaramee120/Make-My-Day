@@ -40,8 +40,9 @@ fetch(urlSearchBar, {
 
     var newCard = $("<div>").attr("class", "card");
 
+    $(".float-container").show();
     $(".nearEvents").text("Events Near " + userInput);
-    $(".nearEvents").show();
+    // $(".nearEvents").show();
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -143,8 +144,9 @@ function seatGeek() {
 
       var newCard = $("<div>").attr("class", "card");
 
+        $(".float-container").show();
         $(".nearEvents").text("Events Near You");
-        $(".nearEvents").show();
+        // $(".nearEvents").show();
         $(".nearEvents").append(newCard);
 
       for (i = 0; i < 5; i++) {
