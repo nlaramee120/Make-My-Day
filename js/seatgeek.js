@@ -2,6 +2,7 @@ $(document).ready(function()  {
 
 var userInput = $(".userInput").val();
 var userBtn = document.querySelector(".userBtn");
+var userGeo = document.querySelector(".locationBtn");
 var url = 'https://api.seatgeek.com/2/events?geoip=true&range=100mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
 // var urlGeo = `https://api.openweathermap.org/data/2.5/weather?q=&lat=${response.coord.lat}&lon=${response.coord.lon}&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial`;
 var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
@@ -38,7 +39,10 @@ fetch(urlSearchBar, {
     }
 
     var newCard = $("<div>").attr("class", "card");
-      $(".nearEvents").append(newCard);
+
+    $(".nearEvents").text("Events Near " + userInput);
+    $(".nearEvents").show();
+    $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
 
@@ -58,7 +62,7 @@ fetch(urlSearchBar, {
           "></img>"
       );
       var title = data.events[i].short_title;
-        newCardBody.append("<h3 class='card-title'>" + title + "<h5>");
+        newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
         var date = data.events[i].datetime_local;
 
@@ -108,8 +112,20 @@ fetch(urlSearchBar, {
   })
 })
 
+
+
+
+
+
+
+userGeo.addEventListener("click", (e) => {
+  e.preventDefault();
+  var clearList = $(".card");
+  clearList.remove();
+  seatGeek();
+});
+
 function seatGeek() {
-  // e.preventDefault();
 
   fetch(url, {
     method: "GET",
@@ -121,6 +137,9 @@ function seatGeek() {
       console.log(data);
 
       var newCard = $("<div>").attr("class", "card");
+
+        $(".nearEvents").text("Events Near You");
+        $(".nearEvents").show();
         $(".nearEvents").append(newCard);
 
       for (i = 0; i < 5; i++) {
@@ -142,7 +161,7 @@ function seatGeek() {
         );
 
         var title = data.events[i].short_title;
-        newCardBody.append("<h3 class='card-title'>" + title + "<h5>");
+        newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
         // var dateConv = moment().format("MMM Do, YYYY, hh:mm:");
         var date = data.events[i].datetime_local;
@@ -204,7 +223,7 @@ function seatGeek() {
 }
 
 
-seatGeek();
+// seatGeek();
 
 
 
