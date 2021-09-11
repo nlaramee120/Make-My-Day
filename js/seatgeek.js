@@ -10,6 +10,8 @@ var saveBtn = document.querySelector(".saveBtn");
 var listItem1 = document.querySelector(".listItem1");
 var modal = document.getElementById("myModal");
 var closeModal = document.querySelector(".close"); 
+var nextBtn = document.querySelector(".nextBtn");
+var showBtn = document.querySelector(".showBtn");
 
 userBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
@@ -17,7 +19,125 @@ userBtn.addEventListener("click", (e) => {
   clearList.remove();
   e.preventDefault();
   console.log(userInput);
-  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=5&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
+
+
+fetch(urlSearchBar, {
+  method: "GET",
+})
+  .then(function(data) {
+    return data.json()
+  })
+  .then(function (data) {
+    console.log(data)
+
+    if (data.meta.total < 1) {
+      modal.style.display = "block";
+      return;
+    }
+
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    showBtn.style.display = "block";
+
+    var newCard = $("<div>").attr("class", "card");
+
+    $(".float-container").show();
+    $(".nearEvents").text("Events Near " + userInput);
+    // $(".nearEvents").show();
+    $(".nearEvents").append(newCard);
+
+    for (i = 0; i < 5; i++) {
+
+      var newCardBody = $("<div>").attr("class", "card-body");
+      $(".card").append(newCardBody);
+      console.log("it works");
+
+      var img = data.events[i].performers[0].image;
+      // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
+      newCardBody.append(
+        "<img class='img-fluid mb-2' src=" +
+          "'" +
+          img +
+          "'" +
+          "alt=" +
+          "test" +
+          "></img>"
+      );
+      var title = data.events[i].short_title;
+        newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
+
+        var date = data.events[i].datetime_local;
+
+        newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
+
+        var location = data.events[i].venue.name;
+        newCardBody.append("<p class='card-text'>" + "Location: " + location + "<p>");
+
+        var getTicks = data.events[i].url;
+        newCardBody.append(
+          "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" +
+            getTicks +
+            ">Get Tickets!" +
+            "</a>"
+        );
+
+        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        );
+
+    }
+
+      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
+      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+
+      var errorNum = 8
+      if (data.events[0].venue.state === data.events[1].venue.state) {
+      console.log(errorNum);
+      }
+      else {
+        modal.style.display = "block";
+      }
+  })
+
+  fetch(urlFiveDay,  {
+      method: "GET",
+    })
+    .then(function (response) {
+      return response.json()
+    })
+
+    
+    .then(function (response) {
+       $(".appendedAll").remove();
+       $(".float-child2").show();
+
+            for (i = 0; i < 5; i++) {
+              var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
+              $(".fiveDay").append(newItem);
+      
+              var date = new Date(response.list[i * 8].dt * 1000);
+              newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
+      
+              var iconCode = response.list[i * 8].weather[0].icon;
+              var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+              newItem.append($("<img>").attr("src", iconURL));
+      
+              var temp = response.list[i * 8].main.temp;
+              newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
+    }
+  })
+})
+
+nextBtn.addEventListener("click", (e) => {
+  userInput = ($(".userInput").val())
+  var clearList = $(".card");
+  clearList.remove();
+  e.preventDefault();
+  console.log(userInput);
+  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=5&page=2&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
   var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
 
 
