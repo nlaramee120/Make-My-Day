@@ -1,9 +1,13 @@
 /*Skeleton Basic Styling*/
 
-.classBody {
-    background-image: url(https://cdn.aarp.net/content/dam/aarp/entertainment/music/2018/03/1140-concert-ticket-prices.imgcache.rev.web.877.500.jpg);
+.topPic {
+    background-image: url(./images/toppic1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .titleheader {
@@ -53,6 +57,59 @@ ul {
     text-align: left;
 }
 
+.savedList {
+    padding: 40px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -80,16 +137,123 @@ h1 {
     text-align: center;
 }
 
+.classBody {
+    background-color: black;
+}
+
+.flextopPic {
+    display: inline;
+}
+
+.searchItems {
+    /* border: 3px solid red; */
+    margin: auto;
+    /* width: 50%; */
+}
+
+.userInput {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 30px;
+}
+
 .card-text {
-    font-size: 15px;
+    font-size: 20px;
+}
+
+.img-fluid {
+    width: 100%;
+    border-radius: 5%;
 }
 
 .card {
-    width: 18rem;
+    width: 30rem;
     margin: auto;
     height: auto;
+    background-color: gray;
+}
+
+.card-body {
+    text-align: center;
+    margin: 10px;
+    background-color: darkgray;
+    border-radius: 5%;
 }
 
 .nearEvents {
+    text-align: center;
+    /* display: none; */
+}
+
+.cityEvents {
+    text-align: center;
+    display: none;
+}
+
+.saveBtn {
+    display: inline;
+    margin: auto;
+    margin-left: 10px;
+}
+
+.float-container {
+    /* border: 3px solid blue; */
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+    display: none;
+}
+
+.float-child1 {
+    width: 75%;
+    float: left;
+    padding: 20px;
+    /* border: 2px solid red; */
+}  
+
+.float-child2 {
+    width: 25%;
+    float: left;
+    padding: 20px;
+    /* border: 2px solid red; */
+    margin-top: 80px;
+    background-color: gray;
+    display: none;
+}  
+
+.prevBtn {
+    font-size: 20px;
+}
+
+.nextBtn {
+    font-size: 20px;
+}
+
+.showBtn {
+    display: none;
+}
+
+.hiddenPrev {
+    display: none;
+}
+
+.favEvents {
     margin: auto;
 }
+
+
+/* this is what I was working on with media query, this makes cards responsive to the window but not mobile ready yet */
+
+@media all and (max-width:900px) {
+   .card-body {
+        max-height: 600px;
+    }
+};
+
+@media all and (min-width:300px) {
+    .card-body .card .card-text{
+        min-height: 152px;
+    }
+};

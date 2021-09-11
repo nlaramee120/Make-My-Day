@@ -19,24 +19,83 @@
 </head>
 
 <body class="classBody">
+<div id="myModal" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>City is not valid, or there are not enough events around this city!</p>
+    </div>
+  </div>
+
+
+  <div class="topPic">
+    <div class="flextopPic">
   <header>
-
-    <h1>Event Searcher</h1>
-
+    <h1>Make My Day</h1>
   </header>
 
   <form>
-        <div class="row">
-          <div class="eight columns">
-            <input class="u-full-width userInput" type="text" placeholder="Enter Search Here" id="inputZip">
-          </div>
-        <button id="submitBtn" class="button-primary userBtn"><i id="icon" class="fas fa-search-location fa-2x"></i></button>
-      </form>
+    <div class="row searchItems">
+      <input class="eleven columns userInput" type="text" placeholder="Type a city here" id="inputZip">  
+      <button id="submitBtn" class="button-primary userBtn one columns"><i id="icon" class="fas fa-search-location fa-2x"></i></button>
+      <button id="submitGeo" class="button-primary locationBtn twelve columns">Search By My Current Location</i></button>
+    </div>
+  </form>
+</div>
+  </div>
 
     <div class="container-fluid">
-        <div class="row eventList">
-                <h2 class="nearEvents">Events Near You</h2>
+
+      <div class="row eventList float-container">
+        <div class="float-child1">
+          <h2 class="nearEvents"></h2>
+        </div>
+        <div class="fiveDay float-child2">
+        </div>
+      </div>
+
+    </div>
+
+    <button class="showBtn"><a class='nextBtn' id='btn_next'>"Next >>>"</a></button>
+    <button class="hiddenPrev"><a class='prevBtn' id='btn_next'>"Previous >>>"</a></button>
+
+    <!-- <div>
+      <ul class="list-group savedList">
+        <li class="list-group-item listItem1">1.</li>
+        <li class="list-group-item">2.</li>
+        <li class="list-group-item">3.</li>
+        <li class="list-group-item">4.</li>
+        <li class="list-group-item">5.</li>
+      </ul>
+    </div> -->
+
+    <!-- <table class="eight columns favEvents">
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Get Tickets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dave Gamache</td>
+          <td>26</td>
+          <td>Male</td>
+          <td>San Francisco</td>
+        </tr>
+        <tr>
+          <td>Dwayne Johnson</td>
+          <td>42</td>
+          <td>Male</td>
+          <td>Hayward</td>
+        </tr>
+      </tbody>
+    </table> -->
+  </div>
+</body>
   
 <script src="./js/seatgeek.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
