@@ -3,13 +3,13 @@ $(document).ready(function()  {
 var userInput = $(".userInput").val();
 var userBtn = document.querySelector(".userBtn");
 var userGeo = document.querySelector(".locationBtn");
-var url = 'https://api.seatgeek.com/2/events?geoip=true&range=100mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
+var url = 'https://api.seatgeek.com/2/events?geoip=true&range=40mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
 // var urlGeo = `https://api.openweathermap.org/data/2.5/weather?q=&lat=${response.coord.lat}&lon=${response.coord.lon}&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial`;
 var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
 var saveBtn = document.querySelector(".saveBtn");
 var listItem1 = document.querySelector(".listItem1");
 var modal = document.getElementById("myModal");
-var closeModal = document.querySelector(".close");
+var closeModal = document.querySelector(".close"); 
 
 userBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
@@ -30,8 +30,9 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
-    if (data.status = 404) {
+    if (data.meta.total < 1) {
       modal.style.display = "block";
+      return;
     }
 
     closeModal.onclick = function() {
@@ -87,6 +88,14 @@ fetch(urlSearchBar, {
 
       newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
       newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+
+      var errorNum = 8
+      if (data.events[0].venue.state === data.events[1].venue.state) {
+      console.log(errorNum);
+      }
+      else {
+        modal.style.display = "block";
+      }
   })
 
   fetch(urlFiveDay,  {
