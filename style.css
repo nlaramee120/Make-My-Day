@@ -146,7 +146,7 @@ h1 {
 }
 
 .searchItems {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     margin: auto;
     /* width: 50%; */
 }
@@ -184,7 +184,7 @@ h1 {
 
 .nearEvents {
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 
 .cityEvents {
@@ -199,24 +199,25 @@ h1 {
 }
 
 .float-container {
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
     padding: 20px;
     width: 70%;
     margin: auto;
+    display: none;
 }
 
 .float-child1 {
     width: 75%;
     float: left;
     padding: 20px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }  
 
 .float-child2 {
     width: 25%;
     float: left;
     padding: 20px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-top: 80px;
     background-color: gray;
     display: none;
