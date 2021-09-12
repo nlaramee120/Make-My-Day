@@ -17,6 +17,7 @@ var prevBtn = document.querySelector(".prevBtn");
 var hiddenPrev = document.querySelector(".hiddenPrev");
 var pageNumber = 0
 var modalBtn = document.querySelector(".modalBtn");
+var closeEventModal = document.querySelector(".closeEventModal")
 
 userBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
@@ -97,10 +98,15 @@ fetch(urlSearchBar, {
 
         $(document).on("click", buttonId, function() {
           console.log(test)
+
+          let newDate = new Date(date);
+          let dateString = newDate.toString("MMMM yyyy");
+
+          listItem1.innerHTML = title + " // " + dateString + " // " + getTicks;
         })
 
     }
-
+   
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
       console.log(errorNum);
@@ -113,8 +119,12 @@ fetch(urlSearchBar, {
         e.preventDefault();
         
         eventModal.style.display = "block"
-      })
 
+        closeEventModal.onclick = function() {
+          eventModal.style.display = "none";
+        }
+      })
+      
 
   })
 
