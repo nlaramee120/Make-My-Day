@@ -234,6 +234,8 @@ h1 {
     /* border: 2px solid red; */
     margin-top: 20px;
     background-color: gray;
+    border: 1px solid white;
+    border-radius: 5px;
     display: none;
 }  
 
