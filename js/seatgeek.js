@@ -11,13 +11,13 @@ var listItem1 = document.querySelector(".listItem1");
 var modal = document.getElementById("myModal");
 var eventModal = document.getElementById("eventModal");
 var closeModal = document.querySelector(".close"); 
-var nextBtn = document.querySelector(".nextBtn");
+var searchShowMore = document.querySelector(".searchShowMore");
 var showBtn = document.querySelector(".showBtn");
-var prevBtn = document.querySelector(".prevBtn");
+var searchShowEvenMore = document.querySelector(".searchShowEvenMore");
 var hiddenPrev = document.querySelector(".hiddenPrev");
 var pageNumber = 0
 var modalBtn = document.querySelector(".modalBtn");
-var closeEventModal = document.querySelector(".closeEventModal")
+var closeEventModal = document.querySelector(".closeEventModal");
 
 userBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
@@ -157,7 +157,7 @@ fetch(urlSearchBar, {
   })
 })
 
-nextBtn.addEventListener("click", (e) => {
+searchShowMore.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
   var clearList = $(".card");
   pageNumber ++;
@@ -280,7 +280,7 @@ fetch(urlSearchBar, {
 })
 
 
-prevBtn.addEventListener("click", (e) => {
+searchShowEvenMore.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
   var clearList = $(".card");
   e.preventDefault();
@@ -424,7 +424,7 @@ function seatGeek() {
       console.log(data);
 
       showBtn.style.display = "block";
-      hiddenPrev.style.display = "block";
+      hiddenPrev.style.display = "none";
 
       var newCard = $("<div>").attr("class", "card");
 

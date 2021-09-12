@@ -225,7 +225,7 @@ h1 {
 }
 
 .fiveDayBorder {
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
     padding: 20px;
     width: 20%;
     margin: auto;
