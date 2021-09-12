@@ -37,7 +37,6 @@ fetch(urlSearchBar, {
 
     if (data.meta.total < 1) {
       modal.style.display = "block";
-      return;
     }
 
     closeModal.onclick = function() {
@@ -45,7 +44,7 @@ fetch(urlSearchBar, {
     }
 
     showBtn.style.display = "block";
-    hiddenPrev.style.display = "block";
+    
 
     var newCard = $("<div>").attr("class", "card");
 
@@ -143,10 +142,10 @@ nextBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
   var clearList = $(".card");
   pageNumber ++;
-  clearList.remove();
+  // clearList.remove();
   e.preventDefault();
   console.log(userInput);
-  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=5&page=" + [pageNumber] + "&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=26&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
   var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
 
 
@@ -159,16 +158,16 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
+
     if (data.meta.total < 1) {
       modal.style.display = "block";
-      return;
     }
 
     closeModal.onclick = function() {
       modal.style.display = "none";
     }
 
-    showBtn.style.display = "block";
+    showBtn.style.display = "none";
     hiddenPrev.style.display = "block";
 
     var newCard = $("<div>").attr("class", "card");
@@ -176,9 +175,8 @@ fetch(urlSearchBar, {
     $(".fiveDayBorder").show();
     $(".eventsTitle").show();
     $(".eventsTitle").text("Events Near " + userInput);
-    $(".nearEvents").append(newCard);
 
-    for (i = 0; i < 5; i++) {
+    for (i = 5; i < 25; i++) {
 
       var newCardBody = $("<div>").attr("class", "card-body");
       $(".card").append(newCardBody);
@@ -266,11 +264,9 @@ fetch(urlSearchBar, {
 prevBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
   var clearList = $(".card");
-  pageNumber --;
-  clearList.remove();
   e.preventDefault();
   console.log(userInput);
-  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=5&page=" + [pageNumber] + "&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=50&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
   var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
 
 
@@ -285,24 +281,22 @@ fetch(urlSearchBar, {
 
     if (data.meta.total < 1) {
       modal.style.display = "block";
-      return;
     }
 
     closeModal.onclick = function() {
       modal.style.display = "none";
     }
 
-    showBtn.style.display = "block";
-    hiddenPrev.style.display = "block";
+    showBtn.style.display = "none";
+    hiddenPrev.style.display = "none";
 
     var newCard = $("<div>").attr("class", "card");
 
     $(".fiveDayBorder").show();
     $(".eventsTitle").show();
     $(".eventsTitle").text("Events Near " + userInput);
-    $(".nearEvents").append(newCard);
 
-    for (i = 0; i < 5; i++) {
+    for (i = 25; i < 50; i++) {
 
       var newCardBody = $("<div>").attr("class", "card-body");
       $(".card").append(newCardBody);
