@@ -88,7 +88,7 @@ ul {
   }
   
   /* The Close Button */
-  .close {
+  .close, .closeEventModal {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -96,7 +96,9 @@ ul {
   }
   
   .close:hover,
-  .close:focus {
+  .close:focus,
+  .closeEventModal:hover,
+  .closeEventmodal:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
