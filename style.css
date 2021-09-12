@@ -4,7 +4,7 @@
     background-image: url(./images/toppic1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 25rem;
+    height: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,6 +194,8 @@ h1 {
     margin: auto;
     height: auto;
     background-color: gray;
+    margin-top: 30px;
+    /* border: 2px solid red; */
 }
 
 .card-body {
@@ -201,6 +203,7 @@ h1 {
     margin: 10px;
     background-color: darkgray;
     border-radius: 5%;
+    /* border: 2px solid red; */
 }
 
 .nearEvents {
@@ -222,7 +225,7 @@ h1 {
 .fiveDayBorder {
     border: 3px solid blue;
     padding: 20px;
-    width: 70%;
+    width: 20%;
     margin: auto;
     display: none;
 }
@@ -231,14 +234,14 @@ h1 {
     width: 75%;
     float: left;
     padding: 20px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }  
 
 .float-child2 {
     width: 25%;
     float: left;
     padding: 20px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-top: 20px;
     background-color: gray;
     /* border: 1px solid white; */
@@ -257,6 +260,21 @@ h1 {
 
 .btn_next {
     font-size: 20px;
+}
+
+.modalBtnAlignment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid white; */
+}
+
+.modalBtn {
+    font-size: 30px;
+    color: tomato;
+    margin-top: 15px;
+    background-color: black;
+    opacity: 90%;
 }
 
 .showBtn {
