@@ -102,7 +102,7 @@ fetch(urlSearchBar, {
           let newDate = new Date(date);
           let dateString = newDate.toString("MMMM yyyy");
 
-          listItem1.innerHTML = title + " // " + dateString + " // " + getTicks;
+          listItem1.innerHTML = title + " // " + date + " // " + getTicks;
         })
 
     }
