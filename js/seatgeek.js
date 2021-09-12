@@ -9,12 +9,14 @@ var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
 var saveBtn = document.querySelector(".saveBtn");
 var listItem1 = document.querySelector(".listItem1");
 var modal = document.getElementById("myModal");
+var eventModal = document.getElementById("eventModal");
 var closeModal = document.querySelector(".close"); 
 var nextBtn = document.querySelector(".nextBtn");
 var showBtn = document.querySelector(".showBtn");
 var prevBtn = document.querySelector(".prevBtn");
-var hiddenPrev = document.querySelector(".hiddenPrev")
+var hiddenPrev = document.querySelector(".hiddenPrev");
 var pageNumber = 0
+var modalBtn = document.querySelector(".modalBtn");
 
 userBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
@@ -106,6 +108,14 @@ fetch(urlSearchBar, {
       else {
         modal.style.display = "block";
       }
+
+      modalBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        eventModal.style.display = "block"
+      })
+
+
   })
 
   fetch(urlFiveDay,  {
@@ -136,7 +146,6 @@ fetch(urlSearchBar, {
     }
   })
 })
-
 
 nextBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
