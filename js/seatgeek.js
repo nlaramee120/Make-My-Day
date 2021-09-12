@@ -4,7 +4,7 @@ var userInput = $(".userInput").val();
 var userBtn = document.querySelector(".userBtn");
 var userGeo = document.querySelector(".locationBtn");
 var url = 'https://api.seatgeek.com/2/events?geoip=true&range=40mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
-// var urlGeo = `https://api.openweathermap.org/data/2.5/weather?q=&lat=${response.coord.lat}&lon=${response.coord.lon}&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial`;
+var urlGeo = 'https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial';
 var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
 var saveBtn = document.querySelector(".saveBtn");
 var listItem1 = document.querySelector(".listItem1");
@@ -37,7 +37,6 @@ fetch(urlSearchBar, {
 
     if (data.meta.total < 1) {
       modal.style.display = "block";
-      return;
     }
 
     closeModal.onclick = function() {
@@ -45,13 +44,13 @@ fetch(urlSearchBar, {
     }
 
     showBtn.style.display = "block";
-    hiddenPrev.style.display = "block";
+    
 
     var newCard = $("<div>").attr("class", "card");
 
-    $(".float-container").show();
-    $(".nearEvents").text("Events Near " + userInput);
-    // $(".nearEvents").show();
+    $(".fiveDayBorder").show();
+    $(".eventsTitle").show();
+    $(".eventsTitle").text("Events Near " + userInput);
     $(".nearEvents").append(newCard);
 
     for (i = 0; i < 5; i++) {
@@ -61,7 +60,6 @@ fetch(urlSearchBar, {
       console.log("it works");
 
       var img = data.events[i].performers[0].image;
-      // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
       newCardBody.append(
         "<img class='img-fluid mb-2' src=" +
           "'" +
@@ -89,13 +87,17 @@ fetch(urlSearchBar, {
             "</a>"
         );
 
-        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
 
-    }
+          let buttonId = "#button" + i;
+          let test = location;
 
-      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
+
+    }
 
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
@@ -140,10 +142,10 @@ nextBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
   var clearList = $(".card");
   pageNumber ++;
-  clearList.remove();
+  // clearList.remove();
   e.preventDefault();
   console.log(userInput);
-  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=5&page=" + [pageNumber] + "&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=26&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
   var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
 
 
@@ -156,30 +158,31 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
+
     if (data.meta.total < 1) {
       modal.style.display = "block";
-      return;
     }
 
     closeModal.onclick = function() {
       modal.style.display = "none";
     }
 
+    showBtn.style.display = "none";
+    hiddenPrev.style.display = "block";
+
     var newCard = $("<div>").attr("class", "card");
 
-    $(".float-container").show();
-    $(".nearEvents").text("Events Near " + userInput);
-    // $(".nearEvents").show();
-    $(".nearEvents").append(newCard);
+    $(".fiveDayBorder").show();
+    $(".eventsTitle").show();
+    $(".eventsTitle").text("Events Near " + userInput);
 
-    for (i = 0; i < 5; i++) {
+    for (i = 5; i < 25; i++) {
 
       var newCardBody = $("<div>").attr("class", "card-body");
       $(".card").append(newCardBody);
       console.log("it works");
 
       var img = data.events[i].performers[0].image;
-      // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
       newCardBody.append(
         "<img class='img-fluid mb-2' src=" +
           "'" +
@@ -207,13 +210,17 @@ fetch(urlSearchBar, {
             "</a>"
         );
 
-        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
 
-    }
+        let buttonId = "#button" + i;
+          let test = location;
 
-      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
+
+    }
 
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
@@ -257,11 +264,9 @@ fetch(urlSearchBar, {
 prevBtn.addEventListener("click", (e) => {
   userInput = ($(".userInput").val())
   var clearList = $(".card");
-  pageNumber --;
-  clearList.remove();
   e.preventDefault();
   console.log(userInput);
-  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=5&page=" + [pageNumber] + "&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlSearchBar = "https://api.seatgeek.com/2/events?venue.city=" + userInput + "&per_page=50&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
   var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
 
 
@@ -276,28 +281,28 @@ fetch(urlSearchBar, {
 
     if (data.meta.total < 1) {
       modal.style.display = "block";
-      return;
     }
 
     closeModal.onclick = function() {
       modal.style.display = "none";
     }
 
+    showBtn.style.display = "none";
+    hiddenPrev.style.display = "none";
+
     var newCard = $("<div>").attr("class", "card");
 
-    $(".float-container").show();
-    $(".nearEvents").text("Events Near " + userInput);
-    // $(".nearEvents").show();
-    $(".nearEvents").append(newCard);
+    $(".fiveDayBorder").show();
+    $(".eventsTitle").show();
+    $(".eventsTitle").text("Events Near " + userInput);
 
-    for (i = 0; i < 5; i++) {
+    for (i = 25; i < 50; i++) {
 
       var newCardBody = $("<div>").attr("class", "card-body");
       $(".card").append(newCardBody);
       console.log("it works");
 
       var img = data.events[i].performers[0].image;
-      // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
       newCardBody.append(
         "<img class='img-fluid mb-2' src=" +
           "'" +
@@ -325,13 +330,17 @@ fetch(urlSearchBar, {
             "</a>"
         );
 
-        newCardBody.append("<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
 
-    }
+          let buttonId = "#button" + i;
+          let test = location;
 
-      newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-      newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
+
+    }
 
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
@@ -395,11 +404,14 @@ function seatGeek() {
     .then(function (data) {
       console.log(data);
 
+      showBtn.style.display = "block";
+      hiddenPrev.style.display = "block";
+
       var newCard = $("<div>").attr("class", "card");
 
-        $(".float-container").show();
-        $(".nearEvents").text("Events Near You");
-        // $(".nearEvents").show();
+        $(".fiveDayBorder").show();
+        $(".eventsTitle").show();
+        $(".eventsTitle").text("Events Near You");
         $(".nearEvents").append(newCard);
 
       for (i = 0; i < 5; i++) {
@@ -409,7 +421,6 @@ function seatGeek() {
         console.log("it works");
 
         var img = data.events[i].performers[0].image;
-        // var imgDisplay = "https://api.seatgeek.com/2/events" + img;
         newCardBody.append(
           "<img class='img-fluid mb-2' src=" +
             "'" +
@@ -439,14 +450,16 @@ function seatGeek() {
             "</a>"
         );
 
-        newCardBody.append(
-          "<button type='button' class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
+        newCardBody.append("<button type='button' id=button" + i + " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
         );
+
+          let buttonId = "#button" + i;
+          let test = location;
+
+        $(document).on("click", buttonId, function() {
+          console.log(test)
+        })
       }
-
-        newCard.append("<a class='prevBtn' href='javascript:prevPage()' id='btn_prev'>" + "<<< Prev" + "</a>");
-        newCard.append("<a class='nextBtn' href='javascript:nextPage()' id='btn_next'>" + "Next >>>" + "</a>");
-
     });
     
     
@@ -460,9 +473,9 @@ function seatGeek() {
   //   .then(function (response) {
   //     return response.json()
   //   })
-  //   .then(function (response) {
+  //   // .then(function (response) {
      
-  //   })
+  //   // })
 
   //   .then(function (response) {
       
@@ -483,18 +496,15 @@ function seatGeek() {
   //             var temp = response.list[i * 8].main.temp;
   //             newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
   //   }
-  // })
-    
+  // }) 
 }
 
 
 
-
-
-$(".saveBtn").delegate("click", function() {
-  console.log("yoyo")
-  listItem1.innerHTML = "hello"
-})
+// $(".saveBtn").delegate("click", function() {
+//   console.log("yoyo")
+//   listItem1.innerHTML = "hello"
+// })
 
 
 

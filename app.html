@@ -41,24 +41,28 @@
       <button id="submitBtn" class="button-primary userBtn one columns"><i id="icon" class="fas fa-search-location fa-2x"></i></button>
       <button id="submitGeo" class="button-primary locationBtn twelve columns">Search By My Current Location</i></button>
     </div>
+    <h1 class="eventsTitle"></h1>
   </form>
 </div>
   </div>
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid"> -->
 
-      <div class="row eventList float-container">
-        <div class="float-child1">
+      <!-- <div class="row eventList float-container"> -->
+  
+        <div class="block">
           <h2 class="nearEvents"></h2>
         </div>
-        <div class="fiveDay float-child2">
+
+        <div class="flexBtns">
+          <button class="hiddenPrev prevBtn"><a id='btn_prev'><< Previous</a></button>
+          <button class="showBtn nextBtn"><a id='btn_next'>Next >></a></button>
         </div>
-      </div>
 
-    </div>
-
-    <button class="showBtn"><a class='nextBtn' id='btn_next'>"Next >>>"</a></button>
-    <button class="hiddenPrev"><a class='prevBtn' id='btn_next'>"Previous >>>"</a></button>
+        <div class="fiveDayBorder">
+        <div class="fiveDay block">
+        </div>
+        </div>
 
     <!-- <div>
       <ul class="list-group savedList">
@@ -68,33 +72,9 @@
         <li class="list-group-item">4.</li>
         <li class="list-group-item">5.</li>
       </ul>
-    </div> -->
-
-    <!-- <table class="eight columns favEvents">
-      <thead>
-        <tr>
-          <th>Event Name</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Get Tickets</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Dave Gamache</td>
-          <td>26</td>
-          <td>Male</td>
-          <td>San Francisco</td>
-        </tr>
-        <tr>
-          <td>Dwayne Johnson</td>
-          <td>42</td>
-          <td>Male</td>
-          <td>Hayward</td>
-        </tr>
-      </tbody>
-    </table> -->
+    </div> -->    
   </div>
+
 </body>
   
 <script src="./js/seatgeek.js"></script>
