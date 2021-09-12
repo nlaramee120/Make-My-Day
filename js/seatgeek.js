@@ -49,7 +49,7 @@ fetch(urlSearchBar, {
 
     var newCard = $("<div>").attr("class", "card");
 
-    $(".float-container").show();
+    $(".fiveDayBorder").show();
     $(".eventsTitle").show();
     $(".eventsTitle").text("Events Near " + userInput);
     $(".nearEvents").append(newCard);
@@ -173,7 +173,7 @@ fetch(urlSearchBar, {
 
     var newCard = $("<div>").attr("class", "card");
 
-    $(".float-container").show();
+    $(".fiveDayBorder").show();
     $(".eventsTitle").show();
     $(".eventsTitle").text("Events Near " + userInput);
     $(".nearEvents").append(newCard);
@@ -297,7 +297,7 @@ fetch(urlSearchBar, {
 
     var newCard = $("<div>").attr("class", "card");
 
-    $(".float-container").show();
+    $(".fiveDayBorder").show();
     $(".eventsTitle").show();
     $(".eventsTitle").text("Events Near " + userInput);
     $(".nearEvents").append(newCard);
@@ -415,7 +415,7 @@ function seatGeek() {
 
       var newCard = $("<div>").attr("class", "card");
 
-        $(".float-container").show();
+        $(".fiveDayBorder").show();
         $(".eventsTitle").show();
         $(".eventsTitle").text("Events Near You");
         $(".nearEvents").append(newCard);
