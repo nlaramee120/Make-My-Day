@@ -1,13 +1,23 @@
 $(document).ready(function()  {
 
+let listItem1 = document.querySelector(".listItem1");
+let listItem2 = document.querySelector(".listItem2");
+let listItem3 = document.querySelector(".listItem3");
+let listItem4 = document.querySelector(".listItem4");
+let listItem5 = document.querySelector(".listItem5");
+let listItem1Used = false
+let listItem2Used = false
+let listItem3Used = false
+let listItem4Used = false
+let listItem5Used = false
+
 var userInput = $(".userInput").val();
 var userBtn = document.querySelector(".userBtn");
 var userGeo = document.querySelector(".locationBtn");
 var url = 'https://api.seatgeek.com/2/events?geoip=true&range=40mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz';
-var urlGeo = 'https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial';
+var urlGeo = 'https://api.openweathermap.org/data/2.5/forecast?q=chicago&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial';
 var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
 var saveBtn = document.querySelector(".saveBtn");
-var listItem1 = document.querySelector(".listItem1");
 var modal = document.getElementById("myModal");
 var eventModal = document.getElementById("eventModal");
 var closeModal = document.querySelector(".close"); 
@@ -68,7 +78,7 @@ fetch(urlSearchBar, {
       $(".card").append(newCardBody);
       console.log("it works");
 
-      var img = data.events[i].performers[0].image;
+      let img = data.events[i].performers[0].image;
       newCardBody.append(
         "<img class='img-fluid mb-2' src=" +
           "'" +
@@ -108,7 +118,27 @@ fetch(urlSearchBar, {
           let newDate = new Date(date);
           let dateString = newDate.toString("MMMM yyyy");
 
-          listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+          if (listItem1Used === false) {
+            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1Used = true;
+         } else if (listItem2Used === false) {
+            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2Used = true;
+         } else if (listItem3Used === false) {
+            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3Used = true;
+         } else if (listItem4Used === false) {
+            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4Used = true;
+         } else if (listItem5Used === false) {
+            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5Used = true;
+         } else {
+           return;
+         }
+         
+
+          
           storeEntry();
         })
 
@@ -613,33 +643,33 @@ function seatGeek() {
           }
       })
     
-      // fetch(urlFiveDay,  {
-      //     method: "GET",
-      //   })
-      //   .then(function (response) {
-      //     return response.json()
-      //   })
+      fetch(urlGeo,  {
+          method: "GET",
+        })
+        .then(function (response) {
+          return response.json()
+        })
     
         
-      //   .then(function (response) {
-      //      $(".appendedAll").remove();
-      //      $(".float-child2").show();
+        .then(function (response) {
+           $(".appendedAll").remove();
+           $(".float-child2").show();
     
-      //           for (i = 0; i < 5; i++) {
-      //             var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
-      //             $(".fiveDay").append(newItem);
+                for (i = 0; i < 5; i++) {
+                  var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
+                  $(".fiveDay").append(newItem);
           
-      //             var date = new Date(response.list[i * 8].dt * 1000);
-      //             newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
+                  var date = new Date(response.list[i * 8].dt * 1000);
+                  newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
           
-      //             var iconCode = response.list[i * 8].weather[0].icon;
-      //             var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-      //             newItem.append($("<img>").attr("src", iconURL));
+                  var iconCode = response.list[i * 8].weather[0].icon;
+                  var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+                  newItem.append($("<img>").attr("src", iconURL));
           
-      //             var temp = response.list[i * 8].main.temp;
-      //             newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
-      //   }
-      // })
+                  var temp = response.list[i * 8].main.temp;
+                  newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
+        }
+      })
     })
 
 
@@ -831,11 +861,11 @@ function seatGeek() {
 
 
 
-var entry1 = $(".listItem1");
-var entry2 = $(".listItem2");
-var entry3 = $(".listItem3");
-var entry4 = $(".listItem4");
-var entry5 = $(".listItem5");
+let entry1 = $(".listItem1");
+let entry2 = $(".listItem2");
+let entry3 = $(".listItem3");
+let entry4 = $(".listItem4");
+let entry5 = $(".listItem5");
 
 function storeEntry() {
   localStorage.setItem("event1", entry1.text());
@@ -845,13 +875,13 @@ function storeEntry() {
   localStorage.setItem("event5", entry5.text());
 };
 
-var getEntry1 = localStorage.getItem("event1");
-var getEntry2 = localStorage.getItem("event2");
-var getEntry3 = localStorage.getItem("event3");
-var getEntry4 = localStorage.getItem("event4");
-var getEntry5 = localStorage.getItem("event5");
+let getEntry1 = localStorage.getItem("event1");
+let getEntry2 = localStorage.getItem("event2");
+let getEntry3 = localStorage.getItem("event3");
+let getEntry4 = localStorage.getItem("event4");
+let getEntry5 = localStorage.getItem("event5");
 
-var pullEvents = [getEntry1, getEntry2, getEntry3, getEntry4, getEntry5];
+let pullEvents = [getEntry1, getEntry2, getEntry3, getEntry4, getEntry5];
 
 for(i = 0; i < pullEvents.length; i++) {
    entry1.text(getEntry1);
