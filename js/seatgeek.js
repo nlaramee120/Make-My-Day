@@ -276,7 +276,25 @@ fetch(urlSearchBar, {
           let newDate = new Date(date);
           let dateString = newDate.toString("MMMM yyyy");
 
-          listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+          if (listItem1Used === false) {
+            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1Used = true;
+         } else if (listItem2Used === false) {
+            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2Used = true;
+         } else if (listItem3Used === false) {
+            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3Used = true;
+         } else if (listItem4Used === false) {
+            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4Used = true;
+         } else if (listItem5Used === false) {
+            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5Used = true;
+         } else {
+           return;
+         }
+
           storeEntry();
         })
 
@@ -378,17 +396,17 @@ fetch(urlSearchBar, {
           "test" +
           "></img>"
       );
-      var title = data.events[i].short_title;
+      let title = data.events[i].short_title;
         newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
-        var date = data.events[i].datetime_local;
+        let date = data.events[i].datetime_local;
 
         newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
-        var location = data.events[i].venue.name;
+        let location = data.events[i].venue.name;
         newCardBody.append("<p class='card-text'>" + "Location: " + location + "<p>");
 
-        var getTicks = data.events[i].url;
+        let getTicks = data.events[i].url;
         newCardBody.append(
           "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" +
             getTicks +
@@ -408,7 +426,25 @@ fetch(urlSearchBar, {
           let newDate = new Date(date);
           let dateString = newDate.toString("MMMM yyyy");
 
-          listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+           if (listItem1Used === false) {
+            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1Used = true;
+         } else if (listItem2Used === false) {
+            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2Used = true;
+         } else if (listItem3Used === false) {
+            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3Used = true;
+         } else if (listItem4Used === false) {
+            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4Used = true;
+         } else if (listItem5Used === false) {
+            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5Used = true;
+         } else {
+           return;
+         }
+
           storeEntry();
         })
 
@@ -532,7 +568,32 @@ function seatGeek() {
 
         $(document).on("click", buttonId, function() {
           console.log(test)
+
+          let newDate = new Date(date);
+          let dateString = newDate.toString("MMMM yyyy");
+
+           if (listItem1Used === false) {
+            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1Used = true;
+         } else if (listItem2Used === false) {
+            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2Used = true;
+         } else if (listItem3Used === false) {
+            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3Used = true;
+         } else if (listItem4Used === false) {
+            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4Used = true;
+         } else if (listItem5Used === false) {
+            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5Used = true;
+         } else {
+           return;
+         }
+         
+          storeEntry();
         })
+
         modalBtn.addEventListener("click", (e) => {
           e.preventDefault();
           
@@ -604,17 +665,17 @@ function seatGeek() {
               "test" +
               "></img>"
           );
-          var title = data.events[i].short_title;
+          let title = data.events[i].short_title;
             newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
     
-            var date = data.events[i].datetime_local;
+            let date = data.events[i].datetime_local;
     
             newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
     
-            var location = data.events[i].venue.name;
+            let location = data.events[i].venue.name;
             newCardBody.append("<p class='card-text'>" + "Location: " + location + "<p>");
     
-            var getTicks = data.events[i].url;
+            let getTicks = data.events[i].url;
             newCardBody.append(
               "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" +
                 getTicks +
@@ -629,8 +690,32 @@ function seatGeek() {
               let test = location;
     
             $(document).on("click", buttonId, function() {
-              console.log(test)
-            })
+          console.log(test)
+
+          let newDate = new Date(date);
+          let dateString = newDate.toString("MMMM yyyy");
+
+           if (listItem1Used === false) {
+            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1Used = true;
+         } else if (listItem2Used === false) {
+            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2Used = true;
+         } else if (listItem3Used === false) {
+            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3Used = true;
+         } else if (listItem4Used === false) {
+            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4Used = true;
+         } else if (listItem5Used === false) {
+            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5Used = true;
+         } else {
+           return;
+         }
+         
+          storeEntry();
+        })
     
         }
     
@@ -728,17 +813,17 @@ function seatGeek() {
               "test" +
               "></img>"
           );
-          var title = data.events[i].short_title;
+          let title = data.events[i].short_title;
             newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
     
-            var date = data.events[i].datetime_local;
+            let date = data.events[i].datetime_local;
     
             newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
     
-            var location = data.events[i].venue.name;
+            let location = data.events[i].venue.name;
             newCardBody.append("<p class='card-text'>" + "Location: " + location + "<p>");
     
-            var getTicks = data.events[i].url;
+            let getTicks = data.events[i].url;
             newCardBody.append(
               "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" +
                 getTicks +
@@ -752,9 +837,33 @@ function seatGeek() {
               let buttonId = "#button" + i;
               let test = location;
     
-            $(document).on("click", buttonId, function() {
-              console.log(test)
-            })
+              $(document).on("click", buttonId, function() {
+                console.log(test)
+      
+                let newDate = new Date(date);
+                let dateString = newDate.toString("MMMM yyyy");
+      
+                 if (listItem1Used === false) {
+                  listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem1Used = true;
+               } else if (listItem2Used === false) {
+                  listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem2Used = true;
+               } else if (listItem3Used === false) {
+                  listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem3Used = true;
+               } else if (listItem4Used === false) {
+                  listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem4Used = true;
+               } else if (listItem5Used === false) {
+                  listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem5Used = true;
+               } else {
+                 return;
+               }
+               
+                storeEntry();
+              })
     
         }
     
