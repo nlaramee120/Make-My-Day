@@ -103,6 +103,7 @@ fetch(urlSearchBar, {
           let dateString = newDate.toString("MMMM yyyy");
 
           listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+          storeEntry();
         })
 
     }
@@ -531,6 +532,53 @@ function seatGeek() {
 
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var entry1 = $(".listItem1");
+var entry2 = $(".listItem2");
+var entry3 = $(".listItem3");
+var entry4 = $(".listItem4");
+var entry5 = $(".listItem5");
+
+function storeEntry() {
+  localStorage.setItem("event1", entry1.text());
+  localStorage.setItem("event2", entry2.text());
+  localStorage.setItem("event3", entry3.text());
+  localStorage.setItem("event4", entry4.text());
+  localStorage.setItem("event5", entry5.text());
+};
+
+var getEntry1 = localStorage.getItem("event1");
+var getEntry2 = localStorage.getItem("event2");
+var getEntry3 = localStorage.getItem("event3");
+var getEntry4 = localStorage.getItem("event4");
+var getEntry5 = localStorage.getItem("event5");
+
+var pullEvents = [getEntry1, getEntry2, getEntry3, getEntry4, getEntry5];
+
+for(i = 0; i < pullEvents.length; i++) {
+   entry1.text(getEntry1);
+   entry2.text(getEntry2);
+   entry3.text(getEntry3);
+   entry4.text(getEntry4);
+   entry5.text(getEntry5);
+};
 
 
 
