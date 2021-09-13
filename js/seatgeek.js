@@ -41,14 +41,6 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
-    if (data.meta.total < 1) {
-      modal.style.display = "block";
-    }
-
-    closeModal.onclick = function() {
-      modal.style.display = "none";
-    }
-
     showBtn.style.display = "block";
     
 
@@ -112,6 +104,13 @@ fetch(urlSearchBar, {
     }
    
       var errorNum = 8
+      if (data.meta.total < 1) {
+        modal.style.display = "block";
+      }
+  
+      closeModal.onclick = function() {
+        modal.style.display = "none";
+      }
       if (data.events[0].venue.state === data.events[1].venue.state) {
       console.log(errorNum);
       }
@@ -181,15 +180,6 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
-
-    if (data.meta.total < 1) {
-      modal.style.display = "block";
-    }
-
-    closeModal.onclick = function() {
-      modal.style.display = "none";
-    }
-
     showBtn.style.display = "none";
     hiddenPrev.style.display = "block";
 
@@ -244,7 +234,13 @@ fetch(urlSearchBar, {
         })
 
     }
+    if (data.meta.total < 1) {
+      modal.style.display = "block";
+    }
 
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
       var errorNum = 8
       if (data.events[0].venue.state === data.events[1].venue.state) {
       console.log(errorNum);
