@@ -2,7 +2,19 @@
 
 # Link to Public Repo on Github:
 
+https://github.com/nlaramee120/Make-My-Day
+
 # Link to Github Deployed Page:
+
+# Showcasing the App
+
+![demo of deployed app](./images/opening.gif)
+
+![searchfeature](./images/search.gif)
+
+![continuation of search](./images/searchtwo.gif)
+
+![save feature](./images/savefeature.gif)
 
 # About Our App
     -This application was created for users to find local events in their cities. What makes this application stand out from other event apps is that when a city is searched, events in that city are presented alongside the current weather in that city. They are also presented with an option to save their events to a schedule.
