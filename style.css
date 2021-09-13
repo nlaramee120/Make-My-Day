@@ -326,7 +326,7 @@ h1 {
     opacity: 80%;
 }
 
-.showBtn {
+.showBtn, .localShowMore, .localShowEvenMore {
     display: none;
 }
 
