@@ -113,7 +113,8 @@ ul {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 55%; /* Could be more or less, depending on screen size */
+    text-align: center;
   }
   
   /* The Close Button */
@@ -190,7 +191,7 @@ h1 {
     width: 30rem;
     margin: auto;
     height: auto;
-    background-color: rgb(61, 54, 54);
+    background-color: tomato;
     margin-top: 30px;
     /* border: 2px solid red; */
 }
