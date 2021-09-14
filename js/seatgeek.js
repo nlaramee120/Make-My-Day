@@ -36,6 +36,7 @@ $(document).ready(function () {
   var localShowMore = document.querySelector(".localShowMore");
   var localShowEvenMore = document.querySelector(".localShowEvenMore");
 
+  // Opens the list of the user's saved events
   modalBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -85,6 +86,7 @@ $(document).ready(function () {
           modal.style.display = "block";
         }
 
+        // modal appears if user enters a bogus city or city that is too small and doesn't have enough events in the radius
         closeModal.onclick = function () {
           modal.style.display = "none";
         };
@@ -1094,7 +1096,8 @@ $(document).ready(function () {
 
             let buttonId = "#button" + i;
             let test = location;
-
+            
+            // Identifies the buttonId which is a future HTML element
             $(document).on("click", buttonId, function () {
               console.log(test);
 
