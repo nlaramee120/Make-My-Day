@@ -68,6 +68,21 @@ fetch(urlSearchBar, {
     console.log(data)
 
     showBtn.style.display = "block";
+
+    var errorNum = 8
+      if (data.meta.total < 1) {
+        modal.style.display = "block";
+      }
+  
+      closeModal.onclick = function() {
+        modal.style.display = "none";
+      }
+      if (data.events[0].venue.state === data.events[1].venue.state) {
+      console.log(errorNum);
+      }
+      else {
+        modal.style.display = "block";
+      }
     
 
     var newCard = $("<div>").attr("class", "card");
@@ -158,21 +173,6 @@ fetch(urlSearchBar, {
         })
 
     }
-   
-      var errorNum = 8
-      if (data.meta.total < 1) {
-        modal.style.display = "block";
-      }
-  
-      closeModal.onclick = function() {
-        modal.style.display = "none";
-      }
-      if (data.events[0].venue.state === data.events[1].venue.state) {
-      console.log(errorNum);
-      }
-      else {
-        modal.style.display = "block";
-      }
 
       modalBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -238,6 +238,21 @@ fetch(urlSearchBar, {
 
     showBtn.style.display = "none";
     hiddenPrev.style.display = "block";
+
+    if (data.meta.total < 20) {
+      modal.style.display = "block";
+    }
+
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+      var errorNum = 8
+      if (data.events[0].venue.state === data.events[1].venue.state) {
+      console.log(errorNum);
+      }
+      else {
+        modal.style.display = "block";
+      }
 
     var newCard = $("<div>").attr("class", "card");
 
@@ -324,20 +339,7 @@ fetch(urlSearchBar, {
         })
 
     }
-    if (data.meta.total < 1) {
-      modal.style.display = "block";
-    }
-
-    closeModal.onclick = function() {
-      modal.style.display = "none";
-    }
-      var errorNum = 8
-      if (data.events[0].venue.state === data.events[1].venue.state) {
-      console.log(errorNum);
-      }
-      else {
-        modal.style.display = "block";
-      }
+    
   })
 
   
@@ -362,13 +364,20 @@ fetch(urlSearchBar, {
   .then(function (data) {
     console.log(data)
 
-    if (data.meta.total < 1) {
+    if (data.meta.total < 25) {
       modal.style.display = "block";
     }
 
     closeModal.onclick = function() {
       modal.style.display = "none";
     }
+      var errorNum = 8
+      if (data.events[0].venue.state === data.events[1].venue.state) {
+      console.log(errorNum);
+      }
+      else {
+        modal.style.display = "block";
+      }
 
     showBtn.style.display = "none";
     hiddenPrev.style.display = "none";
@@ -458,14 +467,6 @@ fetch(urlSearchBar, {
         })
 
     }
-
-      var errorNum = 8
-      if (data.events[0].venue.state === data.events[1].venue.state) {
-      console.log(errorNum);
-      }
-      else {
-        modal.style.display = "block";
-      }
   })
 
   
@@ -494,6 +495,21 @@ function seatGeek() {
     })
     .then(function (data) {
       console.log(data);
+
+      if (data.meta.total < 1) {
+        modal.style.display = "block";
+      }
+  
+      closeModal.onclick = function() {
+        modal.style.display = "none";
+      }
+        var errorNum = 8
+        if (data.events[0].venue.state === data.events[1].venue.state) {
+        console.log(errorNum);
+        }
+        else {
+          modal.style.display = "block";
+        }
 
       localShowMore.style.display = "block";
       localShowEvenMore.style.display = "none";
@@ -645,13 +661,20 @@ function seatGeek() {
       .then(function (data) {
         console.log(data)
     
-        if (data.meta.total < 1) {
+        if (data.meta.total < 20) {
           modal.style.display = "block";
         }
     
         closeModal.onclick = function() {
           modal.style.display = "none";
         }
+          var errorNum = 8
+          if (data.events[0].venue.state === data.events[1].venue.state) {
+          console.log(errorNum);
+          }
+          else {
+            modal.style.display = "block";
+          }
     
         localShowMore.style.display = "none";
         localShowEvenMore.style.display = "block";
@@ -742,17 +765,7 @@ function seatGeek() {
         })
     
         }
-    
-          var errorNum = 8
-          if (data.events[0].venue.state === data.events[1].venue.state) {
-          console.log(errorNum);
-          }
-          else {
-            modal.style.display = "block";
-          }
-      })
-    
-      
+      })  
     })
 
 
@@ -773,13 +786,20 @@ function seatGeek() {
       .then(function (data) {
         console.log(data)
     
-        if (data.meta.total < 1) {
+        if (data.meta.total < 25) {
           modal.style.display = "block";
         }
     
         closeModal.onclick = function() {
           modal.style.display = "none";
         }
+          var errorNum = 8
+          if (data.events[0].venue.state === data.events[1].venue.state) {
+          console.log(errorNum);
+          }
+          else {
+            modal.style.display = "block";
+          }
     
         localShowMore.style.display = "none";
         localShowEvenMore.style.display = "none";
@@ -836,20 +856,30 @@ function seatGeek() {
                 let newDate = new Date(date);
                 let dateString = newDate.toString("MMMM yyyy");
       
-                 if (listItem1Used === false) {
+                if (listItem1Used === false) {
                   listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+                  listItem1.style.display = "block";
+                  deletebtn1.style.display = "block";
                   listItem1Used = true;
                } else if (listItem2Used === false) {
                   listItem2.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+                  listItem2.style.display = "block";
+                  deletebtn2.style.display = "block";
                   listItem2Used = true;
                } else if (listItem3Used === false) {
                   listItem3.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+                  listItem3.style.display = "block";
+                  deletebtn3.style.display = "block"
                   listItem3Used = true;
                } else if (listItem4Used === false) {
                   listItem4.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+                  listItem4.style.display = "block";
+                  deletebtn4.style.display = "block";
                   listItem4Used = true;
                } else if (listItem5Used === false) {
                   listItem5.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+                  listItem5.style.display = "block";
+                  deletebtn5.style.display = "block";
                   listItem5Used = true;
                } else {
                  return;
@@ -857,85 +887,11 @@ function seatGeek() {
                
                 storeEntry();
               })
-    
         }
-    
-          var errorNum = 8
-          if (data.events[0].venue.state === data.events[1].venue.state) {
-          console.log(errorNum);
-          }
-          else {
-            modal.style.display = "block";
-          }
       })
-    
-      
     })
-    
-
-
-  //   fetch(urlGeo,  {
-  //     method: "GET",
-  //   })
-  //   .then(function (response) {
-  //     return response.json()
-  //   })
-  //   // .then(function (response) {
-     
-  //   // })
-
-  //   .then(function (response) {
-      
-  //      $(".appendedAll").remove();
-  //      $(".float-child2").show();
-
-  //           for (i = 0; i < 5; i++) {
-  //             var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
-  //             $(".fiveDay").append(newItem);
-      
-  //             var date = new Date(response.list[i * 8].dt * 1000);
-  //             newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
-      
-  //             var iconCode = response.list[i * 8].weather[0].icon;
-  //             var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-  //             newItem.append($("<img>").attr("src", iconURL));
-      
-  //             var temp = response.list[i * 8].main.temp;
-  //             newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
-  //   }
-  // }) 
 }
-
-
-
-// $(".saveBtn").delegate("click", function() {
-//   console.log("yoyo")
-//   listItem1.innerHTML = "hello"
-// })
-
-
-
-
-
-
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 let entry1 = $(".listItem1");
 let entry2 = $(".listItem2");
