@@ -1,118 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
     <link rel="stylesheet" href="./style.css">
-
     <title>Event Searcher</title>
+  </head>
 
-</head>
-
-<body class="classBody">
-<div id="myModal" class="modal">
-
+  <body class="classBody">
+    <div id="myModal" class="modal">
     <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>City is not valid, or there are not enough events around this city!</p>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>City is not valid, or there are not enough events around this city!</p>
+      </div>
     </div>
-  </div>
 
-  <div id="eventModal" class="modal">
-
+    <div id="eventModal" class="modal">
     <!-- Modal content -->
-    <div class="modal-content">
-      <span class="closeEventModal">&times;</span>
-      <ul class="list-group savedList">
-        <li class="list-group-item listItem1"></li>
-        <button type="button" class="deletebtn1">Remove Event</button>
-        <li class="list-group-item listItem2"></li>
-        <button type="button" class="deletebtn2">Remove Event</button>
-        <li class="list-group-item listItem3"></li>
-        <button type="button" class="deletebtn3">Remove Event</button>
-        <li class="list-group-item listItem4"></li>
-        <button type="button" class="deletebtn4">Remove Event</button>
-        <li class="list-group-item listItem5"></li>
-        <button type="button" class="deletebtn5">Remove Event</button>
-      </ul>
+      <div class="modal-content">
+        <span class="closeEventModal">&times;</span>
+        <ul class="list-group savedList">
+          <li class="list-group-item listItem1"></li>
+          <button type="button" class="deletebtn1">Remove Event</button>
+          <li class="list-group-item listItem2"></li>
+          <button type="button" class="deletebtn2">Remove Event</button>
+          <li class="list-group-item listItem3"></li>
+          <button type="button" class="deletebtn3">Remove Event</button>
+          <li class="list-group-item listItem4"></li>
+          <button type="button" class="deletebtn4">Remove Event</button>
+          <li class="list-group-item listItem5"></li>
+          <button type="button" class="deletebtn5">Remove Event</button>
+        </ul>
+      </div>
     </div>
-  </div>
 
 
-  <div class="topPic">
-    <div class="flextopPic">
-  <header>
-    <h1>Make My Day</h1>
-  </header>
+    <div class="topPic">
+      <div class="flextopPic">
+        <header>
+          <h1>Make My Day</h1>
+        </header>
 
-  <form>
-    <div class="row searchItems">
-      <input class="eleven columns userInput" type="text" placeholder="Type a city here" id="inputZip">  
-      <button id="submitBtn" class="button-primary userBtn one columns"><i id="icon" class="fas fa-search-location fa"></i></button>
-      <button id="submitGeo" class="button-primary locationBtn twelve columns">Search By My Current Location</i></button>
-    </div>
-    <h1 class="eventsTitle"></h1>
-    <div class="modalBtnAlignment">
-      <button class="modalBtn"><i class='far fa-heart'></i></button>
-    </div>
-  </form>
-</div>
-  </div>
-
-    <!-- <div class="container-fluid"> -->
-
-      <!-- <div class="row eventList float-container"> -->
-  
-        <!-- <div class="modalBtnAlignment">
-          <button class="modalBtn"><i class='far fa-heart'></i></button>
-        </div> -->
-
-        <div class="block">
-          <h2 class="nearEvents"></h2>
-        </div>
-
-        <div class="flexBtns">
-          <button class="showBtn searchShowMore"><a id='btn_next'>Show More</a></button>
-          <button class="hiddenPrev searchShowEvenMore"><a id='btn_prev'>Show Even More</a></button>
-
-          <button class="localShowMore"><a id='btn_next'>Show More</a></button>
-          <button class="localShowEvenMore"><a id='btn_prev'>Show Even More</a></button>
-        </div>
-
-        <div class="fiveDayBorder">
-          <div class="fiveDayInnerBorder">
-            <div class="fiveDay block"></div>
+        <form>
+          <div class="row searchItems">
+            <input class="eleven columns userInput" type="text" placeholder="Type a city here" id="inputZip">  
+            <button id="submitBtn" class="button-primary userBtn one columns"><i id="icon" class="fas fa-search-location fa"></i></button>
+            <button id="submitGeo" class="button-primary locationBtn twelve columns">Search By My Current Location</i></button>
           </div>
+          <h1 class="eventsTitle"></h1>
+          <div class="modalBtnAlignment">
+            <button class="modalBtn"><i class='far fa-heart'></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2 class="nearEvents"></h2>
+    </div>
+
+    <div class="flexBtns">
+      <button class="showBtn searchShowMore"><a id='btn_next'>Show More</a></button>
+      <button class="hiddenPrev searchShowEvenMore"><a id='btn_prev'>Show Even More</a></button>
+
+      <button class="localShowMore"><a id='btn_next'>Show More</a></button>
+      <button class="localShowEvenMore"><a id='btn_prev'>Show Even More</a></button>
+    </div>
+
+    <div class="fiveDayBorder">
+      <div class="fiveDayInnerBorder">
+        <div class="fiveDay block"></div>
         </div>
+      </div>  
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/seatgeek.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
-    <!-- <div>
-      <ul class="list-group savedList">
-        <li class="list-group-item listItem1">1.</li>
-        <li class="list-group-item listItem2">2.</li>
-        <li class="list-group-item listItem3">3.</li>
-        <li class="list-group-item listItem4">4.</li>
-        <li class="list-group-item listItem5">5.</li>
-      </ul>
-    </div> -->    
-  </div>
-
-</body>
-  
-<script src="./js/seatgeek.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-</body>
-
+  </body>
 </html>
