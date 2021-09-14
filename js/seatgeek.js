@@ -5,6 +5,11 @@ let listItem2 = document.querySelector(".listItem2");
 let listItem3 = document.querySelector(".listItem3");
 let listItem4 = document.querySelector(".listItem4");
 let listItem5 = document.querySelector(".listItem5");
+let deletebtn1 = document.querySelector(".deletebtn1");
+let deletebtn2 = document.querySelector(".deletebtn2");
+let deletebtn3 = document.querySelector(".deletebtn3");
+let deletebtn4 = document.querySelector(".deletebtn4");
+let deletebtn5 = document.querySelector(".deletebtn5");
 let listItem1Used = false
 let listItem2Used = false
 let listItem3Used = false
@@ -119,19 +124,29 @@ fetch(urlSearchBar, {
           let dateString = newDate.toString("MMMM yyyy");
 
           if (listItem1Used === false) {
-            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem1.style.display = "block";
+            deletebtn1.style.display = "block";
             listItem1Used = true;
          } else if (listItem2Used === false) {
-            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem2.style.display = "block";
+            deletebtn2.style.display = "block";
             listItem2Used = true;
          } else if (listItem3Used === false) {
-            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem3.style.display = "block";
+            deletebtn3.style.display = "block"
             listItem3Used = true;
          } else if (listItem4Used === false) {
-            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem4.style.display = "block";
+            deletebtn4.style.display = "block";
             listItem4Used = true;
          } else if (listItem5Used === false) {
-            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem5.style.display = "block";
+            deletebtn5.style.display = "block";
             listItem5Used = true;
          } else {
            return;
@@ -277,19 +292,29 @@ fetch(urlSearchBar, {
           let dateString = newDate.toString("MMMM yyyy");
 
           if (listItem1Used === false) {
-            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem1.style.display = "block";
+            deletebtn1.style.display = "block";
             listItem1Used = true;
          } else if (listItem2Used === false) {
-            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem2.style.display = "block";
+            deletebtn2.style.display = "block";
             listItem2Used = true;
          } else if (listItem3Used === false) {
-            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem3.style.display = "block";
+            deletebtn3.style.display = "block"
             listItem3Used = true;
          } else if (listItem4Used === false) {
-            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem4.style.display = "block";
+            deletebtn4.style.display = "block";
             listItem4Used = true;
          } else if (listItem5Used === false) {
-            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem5.style.display = "block";
+            deletebtn5.style.display = "block";
             listItem5Used = true;
          } else {
            return;
@@ -427,19 +452,29 @@ fetch(urlSearchBar, {
           let dateString = newDate.toString("MMMM yyyy");
 
            if (listItem1Used === false) {
-            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem1.style.display = "block";
+            deletebtn1.style.display = "block";
             listItem1Used = true;
          } else if (listItem2Used === false) {
-            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem2.style.display = "block";
+            deletebtn2.style.display = "block";
             listItem2Used = true;
          } else if (listItem3Used === false) {
-            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem3.style.display = "block";
+            deletebtn3.style.display = "block"
             listItem3Used = true;
          } else if (listItem4Used === false) {
-            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem4.style.display = "block";
+            deletebtn4.style.display = "block";
             listItem4Used = true;
          } else if (listItem5Used === false) {
-            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem5.style.display = "block";
+            deletebtn5.style.display = "block";
             listItem5Used = true;
          } else {
            return;
@@ -573,19 +608,29 @@ function seatGeek() {
           let dateString = newDate.toString("MMMM yyyy");
 
            if (listItem1Used === false) {
-            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem1.style.display = "block";
+            deletebtn1.style.display = "block";
             listItem1Used = true;
          } else if (listItem2Used === false) {
-            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem2.style.display = "block";
+            deletebtn2.style.display = "block";
             listItem2Used = true;
          } else if (listItem3Used === false) {
-            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem3.style.display = "block";
+            deletebtn3.style.display = "block"
             listItem3Used = true;
          } else if (listItem4Used === false) {
-            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem4.style.display = "block";
+            deletebtn4.style.display = "block";
             listItem4Used = true;
          } else if (listItem5Used === false) {
-            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem5.style.display = "block";
+            deletebtn5.style.display = "block";
             listItem5Used = true;
          } else {
            return;
@@ -696,19 +741,29 @@ function seatGeek() {
           let dateString = newDate.toString("MMMM yyyy");
 
            if (listItem1Used === false) {
-            listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem1.style.display = "block";
+            deletebtn1.style.display = "block";
             listItem1Used = true;
          } else if (listItem2Used === false) {
-            listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem2.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem2.style.display = "block";
+            deletebtn2.style.display = "block";
             listItem2Used = true;
          } else if (listItem3Used === false) {
-            listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem3.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem3.style.display = "block";
+            deletebtn3.style.display = "block"
             listItem3Used = true;
          } else if (listItem4Used === false) {
-            listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem4.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem4.style.display = "block";
+            deletebtn4.style.display = "block";
             listItem4Used = true;
          } else if (listItem5Used === false) {
-            listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+            listItem5.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
+            listItem5.style.display = "block";
+            deletebtn5.style.display = "block";
             listItem5Used = true;
          } else {
            return;
@@ -844,19 +899,19 @@ function seatGeek() {
                 let dateString = newDate.toString("MMMM yyyy");
       
                  if (listItem1Used === false) {
-                  listItem1.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
                   listItem1Used = true;
                } else if (listItem2Used === false) {
-                  listItem2.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem2.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
                   listItem2Used = true;
                } else if (listItem3Used === false) {
-                  listItem3.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem3.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
                   listItem3Used = true;
                } else if (listItem4Used === false) {
-                  listItem4.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem4.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
                   listItem4Used = true;
                } else if (listItem5Used === false) {
-                  listItem5.innerHTML = title + " // " + date + " // " + getTicks;
+                  listItem5.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
                   listItem5Used = true;
                } else {
                  return;
