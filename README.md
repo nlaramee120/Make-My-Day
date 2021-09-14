@@ -1,5 +1,5 @@
 # Make My Day
-Created By: James Capadocia, Nick Laramee, Jonathan Leeno, and Joseph Fabrini
+Created By: James Capadocia, Nick Laramee, Jonathan Lino, and Joseph Fabrini
 <br>
 <br>
 
