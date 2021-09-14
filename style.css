@@ -115,6 +115,25 @@ ul {
     border: 1px solid #888;
     width: 55%; /* Could be more or less, depending on screen size */
     text-align: center;
+    background-color: rgb(165, 146, 146);
+  }
+
+  .listItem1,
+  .listItem2,
+  .listItem3,
+  .listItem4,
+  .listItem5 {
+    border-radius: 5px;
+    display: none;
+  }
+
+  .deletebtn1,
+  .deletebtn2,
+  .deletebtn3,
+  .deletebtn4,
+  .deletebtn5 {
+    display: none;
+    background-color: tomato;
   }
   
   /* The Close Button */
@@ -313,6 +332,10 @@ h1 {
 /* this is what I was working on with media query, this makes cards responsive to the window but not mobile ready yet */
 
 @media all and (max-width:900px) {
+    .modal-content {
+        width: 85%;
+    }
+
     .card {
         width: 90%;
         margin-top: 15px;
