@@ -132,7 +132,6 @@ ul {
 .listItem4,
 .listItem5 {
   border-radius: 5px;
-  display: none;
 }
 
 .deletebtn1,
@@ -140,7 +139,6 @@ ul {
 .deletebtn3,
 .deletebtn4,
 .deletebtn5 {
-  display: none;
   background-color: tomato;
 }
 

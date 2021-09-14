@@ -279,7 +279,6 @@ $(document).ready(function () {
   searchShowMore.addEventListener("click", (e) => {
     userInput = $(".userInput").val();
     var clearList = $(".card");
-    pageNumber++;
     // clearList.remove();
     e.preventDefault();
     console.log(userInput);
@@ -845,7 +844,7 @@ $(document).ready(function () {
 
     localShowMore.addEventListener("click", (e) => {
       var clearList = $(".card");
-      pageNumber++;
+      
       // clearList.remove();
       e.preventDefault();
       console.log(userInput);
@@ -1178,12 +1177,20 @@ $(document).ready(function () {
     });
   }
 
+  // Begin variables for local storage
   let entry1 = $(".listItem1");
   let entry2 = $(".listItem2");
   let entry3 = $(".listItem3");
   let entry4 = $(".listItem4");
   let entry5 = $(".listItem5");
+  let getEntry1 = localStorage.getItem("event1");
+  let getEntry2 = localStorage.getItem("event2");
+  let getEntry3 = localStorage.getItem("event3");
+  let getEntry4 = localStorage.getItem("event4");
+  let getEntry5 = localStorage.getItem("event5");
+  let pullEvents = [getEntry1, getEntry2, getEntry3, getEntry4, getEntry5];
 
+  // Function to store saved events in local storage
   function storeEntry() {
     localStorage.setItem("event1", entry1.text());
     localStorage.setItem("event2", entry2.text());
@@ -1192,14 +1199,7 @@ $(document).ready(function () {
     localStorage.setItem("event5", entry5.text());
   }
   
-  let getEntry1 = localStorage.getItem("event1");
-  let getEntry2 = localStorage.getItem("event2");
-  let getEntry3 = localStorage.getItem("event3");
-  let getEntry4 = localStorage.getItem("event4");
-  let getEntry5 = localStorage.getItem("event5");
-  
-  let pullEvents = [getEntry1, getEntry2, getEntry3, getEntry4, getEntry5];
-
+  // Begin for loop to get stored saved events from local storage and have them persist
   for (i = 0; i < pullEvents.length; i++) {
     entry1.text(getEntry1);
     entry2.text(getEntry2);
@@ -1208,7 +1208,8 @@ $(document).ready(function () {
     entry5.text(getEntry5);
   }
 
-
+// Begin event listeners for each "delete" button in the "Saved Events" modal
+// When click event is triggered, event will be removed from "Saved Event"
 deletebtn1.addEventListener("click", (e) => {
   e.preventDefault();
   listItem1.innerHTML = ""
