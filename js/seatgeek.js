@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+  // All variables to be called in entirety of the code
   let listItem1 = document.querySelector(".listItem1");
   let listItem2 = document.querySelector(".listItem2");
   let listItem3 = document.querySelector(".listItem3");
@@ -43,12 +45,17 @@ $(document).ready(function () {
     };
   });
 
+  // Begin event listener for user to manually input a city and search
   userBtn.addEventListener("click", (e) => {
     userInput = $(".userInput").val();
+
+    // Clears any current cards displayed on app
     var clearList = $(".card");
     clearList.remove();
     e.preventDefault();
     console.log(userInput);
+
+    // Variables defining API fetches
     var urlSearchBar =
       "https://api.seatgeek.com/2/events?venue.city=" +
       userInput +
@@ -60,7 +67,7 @@ $(document).ready(function () {
       weatherKey +
       "&units=imperial";
 
-
+    // Begin fetching from SeatGeek API
     fetch(urlSearchBar, {
       method: "GET",
     })
@@ -88,11 +95,13 @@ $(document).ready(function () {
 
         var newCard = $("<div>").attr("class", "card");
 
+        // Shows containers in innerHTML for where fetched data will be dynamically added and displayed
         $(".fiveDayBorder").show();
         $(".eventsTitle").show();
         $(".eventsTitle").text("Events Near " + userInput);
         $(".nearEvents").append(newCard);
 
+        // For loop to fetch and display/append 5 events based on user input and click event
         for (i = 0; i < 5; i++) {
           var newCardBody = $("<div>").attr("class", "card-body");
           $(".card").append(newCardBody);
@@ -134,15 +143,18 @@ $(document).ready(function () {
               " class='btn btn-primary btn-dlock mt-4 saveBtn'><i class='far fa-heart'></i></button>"
           );
 
+          // Begin creating unique "save buttons" for each event displayed for "Saved Events" modal
           let buttonId = "#button" + i;
           let test = location;
 
+          // Begin event listener for each unqie "save button"
           $(document).on("click", buttonId, function () {
             console.log(test);
 
             let newDate = new Date(date);
             let dateString = newDate.toString("MMMM yyyy");
 
+            // Begin conditional statement to add event information to the "Saved Events" modal
             if (listItem1Used === false) {
               listItem1.innerHTML =
                 title +
@@ -153,8 +165,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem1.style.display = "block";
-              // deletebtn1.style.display = "block";
+              listItem1.style.display = "block";
+              deletebtn1.style.display = "block";
               listItem1Used = true;
             } else if (listItem2Used === false) {
               listItem2.innerHTML =
@@ -166,8 +178,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem2.style.display = "block";
-              // deletebtn2.style.display = "block";
+              listItem2.style.display = "block";
+              deletebtn2.style.display = "block";
               listItem2Used = true;
             } else if (listItem3Used === false) {
               listItem3.innerHTML =
@@ -179,8 +191,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem3.style.display = "block";
-              // deletebtn3.style.display = "block";
+              listItem3.style.display = "block";
+              deletebtn3.style.display = "block";
               listItem3Used = true;
             } else if (listItem4Used === false) {
               listItem4.innerHTML =
@@ -192,8 +204,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem4.style.display = "block";
-              // deletebtn4.style.display = "block";
+              listItem4.style.display = "block";
+              deletebtn4.style.display = "block";
               listItem4Used = true;
             } else if (listItem5Used === false) {
               listItem5.innerHTML =
@@ -205,13 +217,14 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem5.style.display = "block";
-              // deletebtn5.style.display = "block";
+              listItem5.style.display = "block";
+              deletebtn5.style.display = "block";
               listItem5Used = true;
             } else {
               return;
             }
 
+            // Call on storeEntry function to store "saved event" locally
             storeEntry();
           });
         }
@@ -227,6 +240,7 @@ $(document).ready(function () {
         });
       });
 
+    // Begin fetchhing from OpenWeather API
     fetch(urlFiveDay, {
       method: "GET",
     })
@@ -235,9 +249,12 @@ $(document).ready(function () {
       })
 
       .then(function (response) {
+
+        // Clears any current OpenWeather data displayed and shows container in innerHTML where data will be displayed
         $(".appendedAll").remove();
         $(".float-child2").show();
 
+        // Begin for loop to fetch data from OpenWeather API and to append data in appropriate innerHTML container for displaying
         for (i = 0; i < 5; i++) {
           var newItem = $("<div>").attr(
             "class",
@@ -258,6 +275,7 @@ $(document).ready(function () {
       });
   });
 
+  // Begin event listener to show 25 additional results in addition to the 5 originally displayed
   searchShowMore.addEventListener("click", (e) => {
     userInput = $(".userInput").val();
     var clearList = $(".card");
@@ -276,6 +294,7 @@ $(document).ready(function () {
       weatherKey +
       "&units=imperial";
 
+    // Begin fetching from SeatGeek API again
     fetch(urlSearchBar, {
       method: "GET",
     })
@@ -308,6 +327,7 @@ $(document).ready(function () {
         $(".eventsTitle").show();
         $(".eventsTitle").text("Events Near " + userInput);
 
+        // For loop to fetch the next 25 events and append them to the currently displayed list
         for (i = 5; i < 25; i++) {
           var newCardBody = $("<div>").attr("class", "card-body");
           $(".card").append(newCardBody);
@@ -352,12 +372,14 @@ $(document).ready(function () {
           let buttonId = "#button" + i;
           let test = location;
 
+          // Begin event listener for each unqie "save button" for the newly added events in list
           $(document).on("click", buttonId, function () {
             console.log(test);
 
             let newDate = new Date(date);
             let dateString = newDate.toString("MMMM yyyy");
 
+            // Begin conditional statement to add event information to the "Saved Events" modal for thhe newly added events in list
             if (listItem1Used === false) {
               listItem1.innerHTML =
                 title +
@@ -368,8 +390,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem1.style.display = "block";
-              // deletebtn1.style.display = "block";
+              listItem1.style.display = "block";
+              deletebtn1.style.display = "block";
               listItem1Used = true;
             } else if (listItem2Used === false) {
               listItem2.innerHTML =
@@ -381,8 +403,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem2.style.display = "block";
-              // deletebtn2.style.display = "block";
+              listItem2.style.display = "block";
+              deletebtn2.style.display = "block";
               listItem2Used = true;
             } else if (listItem3Used === false) {
               listItem3.innerHTML =
@@ -394,8 +416,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem3.style.display = "block";
-              // deletebtn3.style.display = "block";
+              listItem3.style.display = "block";
+              deletebtn3.style.display = "block";
               listItem3Used = true;
             } else if (listItem4Used === false) {
               listItem4.innerHTML =
@@ -407,8 +429,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem4.style.display = "block";
-              // deletebtn4.style.display = "block";
+              listItem4.style.display = "block";
+              deletebtn4.style.display = "block";
               listItem4Used = true;
             } else if (listItem5Used === false) {
               listItem5.innerHTML =
@@ -420,8 +442,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem5.style.display = "block";
-              // deletebtn5.style.display = "block";
+              listItem5.style.display = "block";
+              deletebtn5.style.display = "block";
               listItem5Used = true;
             } else {
               return;
@@ -433,6 +455,7 @@ $(document).ready(function () {
       });
   });
 
+  // Begin event listener to show 25 additional results in addition to the 25 now displayed
   searchShowEvenMore.addEventListener("click", (e) => {
     userInput = $(".userInput").val();
     var clearList = $(".card");
@@ -449,6 +472,7 @@ $(document).ready(function () {
       weatherKey +
       "&units=imperial";
 
+    // Begin fetching from SeatGeek API again
     fetch(urlSearchBar, {
       method: "GET",
     })
@@ -481,6 +505,7 @@ $(document).ready(function () {
         $(".eventsTitle").show();
         $(".eventsTitle").text("Events Near " + userInput);
 
+        // For loop to fetch the next 25 events and append them to the currently displayed list
         for (i = 25; i < 50; i++) {
           var newCardBody = $("<div>").attr("class", "card-body");
           $(".card").append(newCardBody);
@@ -525,12 +550,14 @@ $(document).ready(function () {
           let buttonId = "#button" + i;
           let test = location;
 
+          // Begin event listener for each unqie "save button" for the newly added events in list
           $(document).on("click", buttonId, function () {
             console.log(test);
 
             let newDate = new Date(date);
             let dateString = newDate.toString("MMMM yyyy");
 
+            // Begin conditional statement to add event information to the "Saved Events" modal for the newly added events in list
             if (listItem1Used === false) {
               listItem1.innerHTML =
                 title +
@@ -541,8 +568,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem1.style.display = "block";
-              // deletebtn1.style.display = "block";
+              listItem1.style.display = "block";
+              deletebtn1.style.display = "block";
               listItem1Used = true;
             } else if (listItem2Used === false) {
               listItem2.innerHTML =
@@ -554,8 +581,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem2.style.display = "block";
-              // deletebtn2.style.display = "block";
+              listItem2.style.display = "block";
+              deletebtn2.style.display = "block";
               listItem2Used = true;
             } else if (listItem3Used === false) {
               listItem3.innerHTML =
@@ -567,8 +594,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem3.style.display = "block";
-              // deletebtn3.style.display = "block";
+              listItem3.style.display = "block";
+              deletebtn3.style.display = "block";
               listItem3Used = true;
             } else if (listItem4Used === false) {
               listItem4.innerHTML =
@@ -580,8 +607,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem4.style.display = "block";
-              // deletebtn4.style.display = "block";
+              listItem4.style.display = "block";
+              deletebtn4.style.display = "block";
               listItem4Used = true;
             } else if (listItem5Used === false) {
               listItem5.innerHTML =
@@ -593,8 +620,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem5.style.display = "block";
-              // deletebtn5.style.display = "block";
+              listItem5.style.display = "block";
+              deletebtn5.style.display = "block";
               listItem5Used = true;
             } else {
               return;
@@ -606,6 +633,8 @@ $(document).ready(function () {
       });
   });
 
+  // Duplicate code from everything above but for when a user were to click "Search By My Current Location" instead of manually inputting and searching a city
+  // Only minor difference in code is that user input does not play a role in results displayed as results will be displayed based on user's geolocation 
   userGeo.addEventListener("click", (e) => {
     e.preventDefault();
     var clearList = $(".card");
@@ -709,8 +738,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem1.style.display = "block";
-              // deletebtn1.style.display = "block";
+              listItem1.style.display = "block";
+              deletebtn1.style.display = "block";
               listItem1Used = true;
             } else if (listItem2Used === false) {
               listItem2.innerHTML =
@@ -722,8 +751,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem2.style.display = "block";
-              // deletebtn2.style.display = "block";
+              listItem2.style.display = "block";
+              deletebtn2.style.display = "block";
               listItem2Used = true;
             } else if (listItem3Used === false) {
               listItem3.innerHTML =
@@ -735,8 +764,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem3.style.display = "block";
-              // deletebtn3.style.display = "block";
+              listItem3.style.display = "block";
+              deletebtn3.style.display = "block";
               listItem3Used = true;
             } else if (listItem4Used === false) {
               listItem4.innerHTML =
@@ -748,8 +777,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem4.style.display = "block";
-              // deletebtn4.style.display = "block";
+              listItem4.style.display = "block";
+              deletebtn4.style.display = "block";
               listItem4Used = true;
             } else if (listItem5Used === false) {
               listItem5.innerHTML =
@@ -761,8 +790,8 @@ $(document).ready(function () {
                 getTicks +
                 ">Get Tickets!" +
                 "</a>";
-              // listItem5.style.display = "block";
-              // deletebtn5.style.display = "block";
+              listItem5.style.display = "block";
+              deletebtn5.style.display = "block";
               listItem5Used = true;
             } else {
               return;
