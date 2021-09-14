@@ -135,9 +135,6 @@ fetch(urlSearchBar, {
         $(document).on("click", buttonId, function() {
           console.log(test)
 
-          let newDate = new Date(date);
-          let dateString = newDate.toString("MMMM yyyy");
-
           if (listItem1Used === false) {
             listItem1.innerHTML = title + "<br>" + date + "<br>" + "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" + getTicks + ">Get Tickets!" + "</a>";
             listItem1.style.display = "block";
@@ -921,6 +918,45 @@ for(i = 0; i < pullEvents.length; i++) {
    entry4.text(getEntry4);
    entry5.text(getEntry5);
 };
+
+deletebtn1.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem1.innerHTML = ""
+  deletebtn1.style.display = "none"
+  listItem1Used = false
+})
+
+deletebtn2.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem2.innerHTML = ""
+  deletebtn2.style.display = "none"
+  listItem2Used = false
+})
+
+deletebtn3.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem3.innerHTML = ""
+  deletebtn3.style.display = "none"
+  listItem3Used = false
+})
+
+deletebtn4.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem4.innerHTML = ""
+  deletebtn4.style.display = "none"
+  listItem4Used = false
+})
+
+deletebtn5.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem5.innerHTML = ""
+  deletebtn5.style.display = "none"
+  listItem5Used = false
+})
+
+
+
+
 
 
 
