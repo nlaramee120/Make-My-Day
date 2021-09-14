@@ -340,33 +340,7 @@ fetch(urlSearchBar, {
       }
   })
 
-  fetch(urlFiveDay,  {
-      method: "GET",
-    })
-    .then(function (response) {
-      return response.json()
-    })
-
-    
-    .then(function (response) {
-       $(".appendedAll").remove();
-       $(".float-child2").show();
-
-            for (i = 0; i < 5; i++) {
-              var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
-              $(".fiveDay").append(newItem);
-      
-              var date = new Date(response.list[i * 8].dt * 1000);
-              newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
-      
-              var iconCode = response.list[i * 8].weather[0].icon;
-              var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-              newItem.append($("<img>").attr("src", iconURL));
-      
-              var temp = response.list[i * 8].main.temp;
-              newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
-    }
-  })
+  
 })
 
 
@@ -494,33 +468,7 @@ fetch(urlSearchBar, {
       }
   })
 
-  fetch(urlFiveDay,  {
-      method: "GET",
-    })
-    .then(function (response) {
-      return response.json()
-    })
-
-    
-    .then(function (response) {
-       $(".appendedAll").remove();
-       $(".float-child2").show();
-
-            for (i = 0; i < 5; i++) {
-              var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
-              $(".fiveDay").append(newItem);
-      
-              var date = new Date(response.list[i * 8].dt * 1000);
-              newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
-      
-              var iconCode = response.list[i * 8].weather[0].icon;
-              var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-              newItem.append($("<img>").attr("src", iconURL));
-      
-              var temp = response.list[i * 8].main.temp;
-              newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
-    }
-  })
+  
 })
 
 
@@ -547,8 +495,6 @@ function seatGeek() {
     .then(function (data) {
       console.log(data);
 
-      showBtn.style.display = "none";
-      hiddenPrev.style.display = "none";
       localShowMore.style.display = "block";
       localShowEvenMore.style.display = "none";
 
@@ -576,18 +522,18 @@ function seatGeek() {
             "></img>"
         );
 
-        var title = data.events[i].short_title;
+        let title = data.events[i].short_title;
         newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
         // var dateConv = moment().format("MMM Do, YYYY, hh:mm:");
-        var date = data.events[i].datetime_local;
+        let date = data.events[i].datetime_local;
 
         newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
-        var location = data.events[i].venue.name;
+        let location = data.events[i].venue.name;
         newCardBody.append("<p class='card-text'>" + "Location: " + location + "<p>");
 
-        var getTicks = data.events[i].url;
+        let getTicks = data.events[i].url;
         newCardBody.append(
           "<a class='btn btn-primary btn-dlock mt-4 getTicks' target='_blank' href=" +
             getTicks +
@@ -648,21 +594,47 @@ function seatGeek() {
             eventModal.style.display = "none";
           }
         })
+
+        fetch(urlGeo,  {
+          method: "GET",
+        })
+        .then(function (response) {
+          return response.json()
+        })
+    
+        
+        .then(function (response) {
+           $(".appendedAll").remove();
+           $(".float-child2").show();
+    
+                for (i = 0; i < 5; i++) {
+                  var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
+                  $(".fiveDay").append(newItem);
+          
+                  var date = new Date(response.list[i * 8].dt * 1000);
+                  newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
+          
+                  var iconCode = response.list[i * 8].weather[0].icon;
+                  var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
+                  newItem.append($("<img>").attr("src", iconURL));
+          
+                  var temp = response.list[i * 8].main.temp;
+                  newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
+        }
+      })
+
       }
     });
     
     
 
     localShowMore.addEventListener("click", (e) => {
-      userInput = ($(".userInput").val())
       var clearList = $(".card");
       pageNumber ++;
       // clearList.remove();
       e.preventDefault();
       console.log(userInput);
-      var urlSearchBar = "https://api.seatgeek.com/2/events?geoip=true&range=40mi&per_page=26&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
-      var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
-    
+      var urlSearchBar = "https://api.seatgeek.com/2/events?geoip=true&range=40mi&per_page=26&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";    
     
     fetch(urlSearchBar, {
       method: "GET",
@@ -673,7 +645,6 @@ function seatGeek() {
       .then(function (data) {
         console.log(data)
     
-    
         if (data.meta.total < 1) {
           modal.style.display = "block";
         }
@@ -682,8 +653,6 @@ function seatGeek() {
           modal.style.display = "none";
         }
     
-        showBtn.style.display = "none";
-        hiddenPrev.style.display = "none";
         localShowMore.style.display = "none";
         localShowEvenMore.style.display = "block";
         
@@ -692,7 +661,7 @@ function seatGeek() {
     
         $(".fiveDayBorder").show();
         $(".eventsTitle").show();
-        $(".eventsTitle").text("Events Near " + userInput);
+        $(".eventsTitle").text("Events Near You");
     
         for (i = 5; i < 25; i++) {
     
@@ -783,46 +752,17 @@ function seatGeek() {
           }
       })
     
-      fetch(urlGeo,  {
-          method: "GET",
-        })
-        .then(function (response) {
-          return response.json()
-        })
-    
-        
-        .then(function (response) {
-           $(".appendedAll").remove();
-           $(".float-child2").show();
-    
-                for (i = 0; i < 5; i++) {
-                  var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
-                  $(".fiveDay").append(newItem);
-          
-                  var date = new Date(response.list[i * 8].dt * 1000);
-                  newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
-          
-                  var iconCode = response.list[i * 8].weather[0].icon;
-                  var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-                  newItem.append($("<img>").attr("src", iconURL));
-          
-                  var temp = response.list[i * 8].main.temp;
-                  newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
-        }
-      })
+      
     })
 
 
 
 
     localShowEvenMore.addEventListener("click", (e) => {
-      userInput = ($(".userInput").val())
       var clearList = $(".card");
       e.preventDefault();
       console.log(userInput);
-      var urlSearchBar = "https://api.seatgeek.com/2/events?geoip=true&range=40mi&per_page=50&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
-      var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&appid=" + weatherKey + "&units=imperial";
-    
+      var urlSearchBar = "https://api.seatgeek.com/2/events?geoip=true&range=40mi&per_page=50&page=1&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";    
     
     fetch(urlSearchBar, {
       method: "GET",
@@ -841,8 +781,6 @@ function seatGeek() {
           modal.style.display = "none";
         }
     
-        showBtn.style.display = "none";
-        hiddenPrev.style.display = "none";
         localShowMore.style.display = "none";
         localShowEvenMore.style.display = "none";
     
@@ -850,7 +788,7 @@ function seatGeek() {
     
         $(".fiveDayBorder").show();
         $(".eventsTitle").show();
-        $(".eventsTitle").text("Events Near " + userInput);
+        $(".eventsTitle").text("Events Near You");
     
         for (i = 25; i < 50; i++) {
     
@@ -931,33 +869,7 @@ function seatGeek() {
           }
       })
     
-      fetch(urlFiveDay,  {
-          method: "GET",
-        })
-        .then(function (response) {
-          return response.json()
-        })
-    
-        
-        .then(function (response) {
-           $(".appendedAll").remove();
-           $(".float-child2").show();
-    
-                for (i = 0; i < 5; i++) {
-                  var newItem = $("<div>").attr("class", "col-sm-12 bg-primary text-white rounded appendedAll");
-                  $(".fiveDay").append(newItem);
-          
-                  var date = new Date(response.list[i * 8].dt * 1000);
-                  newItem.append("<h4>" + date.toLocaleDateString() + "<h4>");
-          
-                  var iconCode = response.list[i * 8].weather[0].icon;
-                  var iconURL = "http://openweathermap.org/img/wn/" + iconCode + ".png";
-                  newItem.append($("<img>").attr("src", iconURL));
-          
-                  var temp = response.list[i * 8].main.temp;
-                  newItem.append("<p>" + ("Temp: " + temp + " F") + "<p>");
-        }
-      })
+      
     })
     
 
