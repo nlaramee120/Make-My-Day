@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   // All variables to be called in entirety of the code
   let listItem1 = document.querySelector(".listItem1");
   let listItem2 = document.querySelector(".listItem2");
@@ -20,8 +19,10 @@ $(document).ready(function () {
   var userInput = $(".userInput").val();
   var userBtn = document.querySelector(".userBtn");
   var userGeo = document.querySelector(".locationBtn");
-  var url = "https://api.seatgeek.com/2/events?geoip=true&range=40mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
-  var urlGeo = "https://api.openweathermap.org/data/2.5/forecast?q=chicago&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial";
+  var url =
+    "https://api.seatgeek.com/2/events?geoip=true&range=40mi&client_id=MjMyNTQ3OTl8MTYzMTEyNjQ3Mi40MjI1NzMz";
+  var urlGeo =
+    "https://api.openweathermap.org/data/2.5/forecast?q=chicago&appid=3a150e01056da8ad0b1ee8083da97feb&units=imperial";
   var weatherKey = "3a150e01056da8ad0b1ee8083da97feb";
   var modal = document.getElementById("myModal");
   var eventModal = document.getElementById("eventModal");
@@ -249,7 +250,6 @@ $(document).ready(function () {
       })
 
       .then(function (response) {
-
         // Clears any current OpenWeather data displayed and shows container in innerHTML where data will be displayed
         $(".appendedAll").remove();
         $(".float-child2").show();
@@ -633,7 +633,7 @@ $(document).ready(function () {
   });
 
   // Duplicate code from everything above but for when a user were to click "Search By My Current Location" instead of manually inputting and searching a city
-  // Only minor difference in code is that user input does not play a role in results displayed as results will be displayed based on user's geolocation 
+  // Only minor difference in code is that user input does not play a role in results displayed as results will be displayed based on user's geolocation
   userGeo.addEventListener("click", (e) => {
     e.preventDefault();
     var clearList = $(".card");
@@ -1198,7 +1198,7 @@ $(document).ready(function () {
     localStorage.setItem("event4", entry4.text());
     localStorage.setItem("event5", entry5.text());
   }
-  
+
   // Begin for loop to get stored saved events from local storage and have them persist
   for (i = 0; i < pullEvents.length; i++) {
     entry1.text(getEntry1);
@@ -1208,40 +1208,40 @@ $(document).ready(function () {
     entry5.text(getEntry5);
   }
 
-// Begin event listeners for each "delete" button in the "Saved Events" modal
-// When click event is triggered, event will be removed from "Saved Event"
-deletebtn1.addEventListener("click", (e) => {
-  e.preventDefault();
-  listItem1.innerHTML = ""
-  deletebtn1.style.display = "none"
-  listItem1Used = false
-})
+  // Begin event listeners for each "delete" button in the "Saved Events" modal
+  // When click event is triggered, event will be removed from "Saved Events" modal
+  deletebtn1.addEventListener("click", (e) => {
+    e.preventDefault();
+    listItem1.innerHTML = "";
+    deletebtn1.style.display = "none";
+    listItem1Used = false;
+  });
 
-deletebtn2.addEventListener("click", (e) => {
-  e.preventDefault();
-  listItem2.innerHTML = ""
-  deletebtn2.style.display = "none"
-  listItem2Used = false
-})
+  deletebtn2.addEventListener("click", (e) => {
+    e.preventDefault();
+    listItem2.innerHTML = "";
+    deletebtn2.style.display = "none";
+    listItem2Used = false;
+  });
 
-deletebtn3.addEventListener("click", (e) => {
-  e.preventDefault();
-  listItem3.innerHTML = ""
-  deletebtn3.style.display = "none"
-  listItem3Used = false
-})
+  deletebtn3.addEventListener("click", (e) => {
+    e.preventDefault();
+    listItem3.innerHTML = "";
+    deletebtn3.style.display = "none";
+    listItem3Used = false;
+  });
 
-deletebtn4.addEventListener("click", (e) => {
-  e.preventDefault();
-  listItem4.innerHTML = ""
-  deletebtn4.style.display = "none"
-  listItem4Used = false
-})
+  deletebtn4.addEventListener("click", (e) => {
+    e.preventDefault();
+    listItem4.innerHTML = "";
+    deletebtn4.style.display = "none";
+    listItem4Used = false;
+  });
 
-deletebtn5.addEventListener("click", (e) => {
-  e.preventDefault();
-  listItem5.innerHTML = ""
-  deletebtn5.style.display = "none"
-  listItem5Used = false
-})
+  deletebtn5.addEventListener("click", (e) => {
+    e.preventDefault();
+    listItem5.innerHTML = "";
+    deletebtn5.style.display = "none";
+    listItem5Used = false;
+  });
 });
