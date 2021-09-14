@@ -1191,13 +1191,13 @@ $(document).ready(function () {
     localStorage.setItem("event4", entry4.text());
     localStorage.setItem("event5", entry5.text());
   }
-
+  
   let getEntry1 = localStorage.getItem("event1");
   let getEntry2 = localStorage.getItem("event2");
   let getEntry3 = localStorage.getItem("event3");
   let getEntry4 = localStorage.getItem("event4");
   let getEntry5 = localStorage.getItem("event5");
-
+  
   let pullEvents = [getEntry1, getEntry2, getEntry3, getEntry4, getEntry5];
 
   for (i = 0; i < pullEvents.length; i++) {
@@ -1207,4 +1207,40 @@ $(document).ready(function () {
     entry4.text(getEntry4);
     entry5.text(getEntry5);
   }
+
+
+deletebtn1.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem1.innerHTML = ""
+  deletebtn1.style.display = "none"
+  listItem1Used = false
+})
+
+deletebtn2.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem2.innerHTML = ""
+  deletebtn2.style.display = "none"
+  listItem2Used = false
+})
+
+deletebtn3.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem3.innerHTML = ""
+  deletebtn3.style.display = "none"
+  listItem3Used = false
+})
+
+deletebtn4.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem4.innerHTML = ""
+  deletebtn4.style.display = "none"
+  listItem4Used = false
+})
+
+deletebtn5.addEventListener("click", (e) => {
+  e.preventDefault();
+  listItem5.innerHTML = ""
+  deletebtn5.style.display = "none"
+  listItem5Used = false
+})
 });
