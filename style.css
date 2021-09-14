@@ -29,8 +29,13 @@
 .titlep {
     color: rgb(255, 255, 255);
     text-align: center;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    opacity: 80%;
+    text-align: center;
     font-size: 25px;
-    margin: 0 75px 50px 75px;
+    margin: 0 50px 50px 50px;
 }
 
 .feature1,
@@ -429,7 +434,8 @@ h1 {
         color: rgb(255, 255, 255);
         text-align: center;
         font-size: 15px;
-        margin: 0 75px 20px 75px;
+        margin: 40px 50px 40px 50px;
+        padding: 0 15px 0 15px;
     }
     
     .feature1,

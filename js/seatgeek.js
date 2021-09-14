@@ -891,7 +891,6 @@ function seatGeek() {
       })
     })
 }
-})
 
 let entry1 = $(".listItem1");
 let entry2 = $(".listItem2");
@@ -925,12 +924,4 @@ for(i = 0; i < pullEvents.length; i++) {
 
 
 
-
-
-
-
-
-
-
-
-
+})
