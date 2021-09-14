@@ -1,489 +1,490 @@
 /*Skeleton Basic Styling*/
 
 * {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px;
+  opacity: 80%;
+}
+
+ul {
+  width: 100%;
 }
 
 .topPic {
-    background-image: url(./images/toppic1.jpg);
-    background-image: linear-gradient(to bottom, transparent, black), url("./images/toppic1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 30rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-image: url(./images/toppic1.jpg);
+  background-image: linear-gradient(to bottom, transparent, black),
+    url("./images/toppic1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .titleheader {
-    color: tomato;
-    font-size: 80px;
-    text-align: center;
-    margin: 50px 50px 50px 50px;
-    background-color: black;
-    border: 2px solid white;
-    border-radius: 10px;
-    opacity: 80%;
+  color: tomato;
+  font-size: 80px;
+  text-align: center;
+  margin: 50px 50px 50px 50px;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 80%;
 }
 
 .titlep {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    background-color: black;
-    border: 2px solid white;
-    border-radius: 10px;
-    opacity: 80%;
-    text-align: center;
-    font-size: 25px;
-    margin: 0 50px 50px 50px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 80%;
+  text-align: center;
+  font-size: 25px;
+  margin: 0 50px 50px 50px;
 }
 
 .feature1,
 .feature2,
 .feature3 {
-    color: white;
-    text-align: center;
-    background-color: black;
-    border: 2px solid white;
-    border-radius: 10px;
-    opacity: 80%;
-    font-size: 25px;
-    width: 60%;
-    margin: auto;
+  color: white;
+  text-align: center;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 80%;
+  font-size: 25px;
+  width: 60%;
+  margin: auto;
 }
 
 .feature1,
 .feature2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .feature3 {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .titleul {
+  text-align: center;
+  font-size: 30px;
+  color: rgb(132, 202, 243);
+  text-shadow: 1px 1px black;
+}
+
+.titlecontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.titlecenter {
+  width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.savedList {
+  padding: 40px;
+}
+
+/* The Modal (background) */
+.modal,
+#eventModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 55%; /* Could be more or less, depending on screen size */
+  text-align: center;
+  background-color: rgb(165, 146, 146);
+}
+
+.listItem1,
+.listItem2,
+.listItem3,
+.listItem4,
+.listItem5 {
+  border-radius: 5px;
+  /* display: none; */
+}
+
+.deletebtn1,
+.deletebtn2,
+.deletebtn3,
+.deletebtn4,
+.deletebtn5 {
+  /* display: none; */
+  background-color: tomato;
+}
+
+/* The Close Button */
+.close,
+.closeEventModal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.closeEventModal:hover,
+.closeEventmodal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.classBody {
+  background-color: black;
+}
+
+.flextopPic {
+  display: inline;
+}
+
+.searchItems {
+  /* border: 3px solid red; */
+  margin: auto;
+  /* width: 50%; */
+}
+
+.userInput {
+  text-align: center;
+}
+
+.eventsTitle {
+  display: none;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px;
+  opacity: 80%;
+}
+
+.card-title {
+  font-size: 30px;
+}
+
+.card-text {
+  font-size: 20px;
+}
+
+.img-fluid {
+  width: 100%;
+  border-radius: 5%;
+}
+
+.card {
+  width: 30rem;
+  margin: auto;
+  height: auto;
+  background-color: tomato;
+  margin-top: 30px;
+  /* border: 2px solid red; */
+}
+
+.card-body {
+  text-align: center;
+  margin: 10px;
+  background-color: rgb(165, 146, 146);
+  border-radius: 5%;
+  /* border: 2px solid red; */
+}
+
+.nearEvents {
+  text-align: center;
+  /* display: none; */
+}
+
+.cityEvents {
+  text-align: center;
+  display: none;
+}
+
+.saveBtn {
+  display: inline;
+  margin: auto;
+  margin-left: 10px;
+}
+
+.fiveDayBorder {
+  /* border: 3px solid blue; */
+  background-color: rgb(21, 57, 90);
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 20px;
+  width: 30rem;
+  margin: auto;
+  display: none;
+  margin-top: 20px;
+}
+
+.fiveDayInnerBorder {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(37, 111, 180);
+  border-radius: 25px;
+  margin: 5px 18px 5px 18px;
+}
+
+.fiveDay {
+  text-align: center;
+  width: 40%;
+  margin-top: 40px;
+}
+
+.float-child1 {
+  width: 75%;
+  float: left;
+  padding: 20px;
+  /* border: 2px solid red; */
+}
+
+.float-child2 {
+  width: 25%;
+  float: left;
+  padding: 20px;
+  /* border: 2px solid red; */
+  margin-top: 20px;
+  background-color: gray;
+  /* border: 1px solid white; */
+  border-radius: 5px;
+  display: none;
+}
+
+.flexBtns {
+  display: flex;
+  justify-content: center;
+}
+
+.btn_prev {
+  font-size: 20px;
+}
+
+.btn_next {
+  font-size: 20px;
+}
+
+.modalBtnAlignment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid white; */
+}
+
+.modalBtn {
+  font-size: 30px;
+  color: tomato;
+  margin-top: 15px;
+  background-color: black;
+  opacity: 80%;
+}
+
+.showBtn,
+.localShowMore,
+.localShowEvenMore {
+  display: none;
+}
+
+.hiddenPrev {
+  display: none;
+}
+
+.favEvents {
+  margin: auto;
+}
+
+#submitBtn {
+  font-size: 25px;
+}
+
+#titleimage {
+  background-image: url(./images/titlebackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#titlebutton {
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+/* this is what I was working on with media query, this makes cards responsive to the window but not mobile ready yet */
+
+@media all and (max-width: 900px) {
+  h1 {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .modal-content {
+    width: 85%;
+  }
+
+  .card {
+    width: 90%;
+    margin-top: 15px;
+  }
+
+  .card-body {
+    width: auto;
+    border-radius: 5px;
+  }
+
+  .topPic {
+    width: auto;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .fiveDayBorder {
+    background-color: rgb(21, 57, 90);
+    width: 90%;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* border: 2px solid red; */
+  }
+
+  .fiveDayInnerBorder {
+    background-color: rgb(37, 111, 180);
+    width: 90%;
+    margin: auto;
+    padding-bottom: 3px;
+    border-radius: 5px;
+  }
+
+  .fiveDay {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 40px 0 0 0;
+  }
+
+  .userInput {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .userBtn {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .locationBtn {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .eventsTitle {
+    width: 90%;
+    margin: auto;
+  }
+
+  .titleheader {
+    color: tomato;
+    font-size: 30px;
+    text-align: center;
+    margin: 75px 50px 20px 50px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    opacity: 80%;
+  }
+
+  .titlep {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 15px;
+    margin: 40px 50px 40px 50px;
+    padding: 0 15px 0 15px;
+  }
+
+  .feature1,
+  .feature2,
+  .feature3 {
+    color: white;
+    text-align: center;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+    opacity: 80%;
+    font-size: 15px;
+    width: 75%;
+    margin: auto;
+    padding: 2px;
+  }
+
+  .feature1,
+  .feature2 {
+    margin-bottom: 10px;
+  }
+
+  .feature3 {
+    margin-bottom: 50px;
+  }
+
+  .titleul {
     text-align: center;
     font-size: 30px;
     color: rgb(132, 202, 243);
     text-shadow: 1px 1px black;
-}
+  }
 
-.titlecontainer {
+  .titlecontainer {
     display: flex;
     justify-content: center;
-}
+  }
 
-#titleimage {
-    background-image: url(./images/titlebackground.jpg);
+  #titleimage {
+    background-image: url(./images/titlebackground1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}
+  }
 
-#titlebutton {
-    font-size: 15px;
+  #titlebutton {
+    font-size: 10px;
     border-radius: 5px;
-}
-
-ul {
-    width: 100%;
-}
-
-.titlecenter {
-    width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.savedList {
-    padding: 40px;
-}
-
-/* The Modal (background) */
-.modal, #eventModal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 50%;
+    margin-bottom: 95px;
   }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 55%; /* Could be more or less, depending on screen size */
-    text-align: center;
-    background-color: rgb(165, 146, 146);
-  }
-
-  .listItem1,
-  .listItem2,
-  .listItem3,
-  .listItem4,
-  .listItem5 {
-    border-radius: 5px;
-    display: none;
-  }
-
-  .deletebtn1,
-  .deletebtn2,
-  .deletebtn3,
-  .deletebtn4,
-  .deletebtn5 {
-    display: none;
-    background-color: tomato;
-  }
-  
-  /* The Close Button */
-  .close, .closeEventModal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus,
-  .closeEventModal:hover,
-  .closeEventmodal:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-h1 {
-    text-align: center;
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-    border-radius: 10px;
-    font-size: 30px;
-    padding: 5px;
-    opacity: 80%;
-}
-
-.classBody {
-    background-color: black;
-}
-
-.flextopPic {
-    display: inline;
-}
-
-.searchItems {
-    /* border: 3px solid red; */
-    margin: auto;
-    /* width: 50%; */
-}
-
-.userInput {
-    text-align: center;
-}
-
-.eventsTitle {
-    display: none;
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-    border-radius: 10px;
-    font-size: 30px;
-    padding: 5px;
-    opacity: 80%;
-}
-
-.card-title {
-    font-size: 30px;
-}
-
-.card-text {
-    font-size: 20px;
-}
-
-.img-fluid {
-    width: 100%;
-    border-radius: 5%;
-}
-
-.card {
-    width: 30rem;
-    margin: auto;
-    height: auto;
-    background-color: tomato;
-    margin-top: 30px;
-    /* border: 2px solid red; */
-}
-
-.card-body {
-    text-align: center;
-    margin: 10px;
-    background-color: rgb(165, 146, 146);
-    border-radius: 5%;
-    /* border: 2px solid red; */
-}
-
-.nearEvents {
-    text-align: center;
-    /* display: none; */
-}
-
-.cityEvents {
-    text-align: center;
-    display: none;
-}
-
-.saveBtn {
-    display: inline;
-    margin: auto;
-    margin-left: 10px;
-}
-
-.fiveDayBorder {
-    /* border: 3px solid blue; */
-    background-color: rgb(21, 57, 90);
-    border-radius: 5px;
-    border: 1px solid white;
-    padding: 20px;
-    width: 30rem;
-    margin: auto;
-    display: none;
-    margin-top: 20px;
-}
-
-.fiveDayInnerBorder {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(37, 111, 180);
-    border-radius: 25px;
-    margin: 5px 18px 5px 18px;
-}
-
-.fiveDay {
-    text-align: center;
-    width: 40%;
-    margin-top: 40px;
-}
-
-.float-child1 {
-    width: 75%;
-    float: left;
-    padding: 20px;
-    /* border: 2px solid red; */
-}  
-
-.float-child2 {
-    width: 25%;
-    float: left;
-    padding: 20px;
-    /* border: 2px solid red; */
-    margin-top: 20px;
-    background-color: gray;
-    /* border: 1px solid white; */
-    border-radius: 5px;
-    display: none;
-}  
-
-.flexBtns {
-    display: flex;
-    justify-content: center;
-}
-
-.btn_prev {
-    font-size: 20px;
-}
-
-.btn_next {
-    font-size: 20px;
-}
-
-.modalBtnAlignment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 2px solid white; */
-}
-
-.modalBtn {
-    font-size: 30px;
-    color: tomato;
-    margin-top: 15px;
-    background-color: black;
-    opacity: 80%;
-}
-
-.showBtn, .localShowMore, .localShowEvenMore {
-    display: none;
-}
-
-.hiddenPrev {
-    display: none;
-}
-
-.favEvents {
-    margin: auto;
-}
-
-#submitBtn {
-    font-size: 25px;
-}
-
-
-/* this is what I was working on with media query, this makes cards responsive to the window but not mobile ready yet */
-
-@media all and (max-width:900px) {
-    .modal-content {
-        width: 85%;
-    }
-
-    .card {
-        width: 90%;
-        margin-top: 15px;
-    }
-   
-    .card-body {
-        width: auto;
-        border-radius: 5px;
-    }
-
-    .topPic {
-        width: auto;
-    }
-
-    .block {
-        display: block;
-    }
-
-    .fiveDayBorder {
-        background-color: rgb(21, 57, 90);
-        width: 90%;
-        margin: auto;
-        border: 1px solid white;
-        border-radius: 5px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        /* border: 2px solid red; */
-    }
-
-    .fiveDayInnerBorder {
-        background-color: rgb(37, 111, 180);
-        width: 90%;
-        margin: auto;
-        padding-bottom: 3px;
-        border-radius: 5px;
-    }
-
-    .fiveDay {
-        width: 60%;
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 5px;
-        padding: 40px 0 0 0;
-    }
-
-    /* .appendedAll {
-        border: 1px solid white;
-    } */
-
-    .userInput {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 20px;
-    }
-
-    .userBtn {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 20px;
-    }
-
-    .locationBtn {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 20px;
-    }
-
-    .eventsTitle {
-        width: 90%;
-        margin: auto;
-    }
-
-    h1 {
-        width: 90%;
-        margin: auto;
-        margin-bottom: 20px;
-    }
-
-    .titleheader {
-        color: tomato;
-        font-size: 30px;
-        text-align: center;
-        margin: 75px 50px 20px 50px;
-        background-color: black;
-        border: 2px solid white;
-        border-radius: 10px;
-        opacity: 80%;
-    }
-    
-    .titlep {
-        color: rgb(255, 255, 255);
-        text-align: center;
-        font-size: 15px;
-        margin: 40px 50px 40px 50px;
-        padding: 0 15px 0 15px;
-    }
-    
-    .feature1,
-    .feature2,
-    .feature3 {
-        color: white;
-        text-align: center;
-        background-color: black;
-        border: 2px solid white;
-        border-radius: 5px;
-        opacity: 80%;
-        font-size: 15px;
-        width: 75%;
-        margin: auto;
-        padding: 2px;
-    }
-    
-    .feature1,
-    .feature2 {
-        margin-bottom: 10px;
-    }
-    
-    .feature3 {
-        margin-bottom: 50px;
-    }
-    
-    .titleul {
-        text-align: center;
-        font-size: 30px;
-        color: rgb(132, 202, 243);
-        text-shadow: 1px 1px black;
-    }
-    
-    .titlecontainer {
-        display: flex;
-        justify-content: center;
-    }
-    
-    #titleimage {
-        background-image: url(./images/titlebackground1.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    
-    #titlebutton {
-        font-size: 10px;
-        border-radius: 5px;
-        width: 50%;
-        margin-bottom: 95px;
-    }
 };
