@@ -279,7 +279,6 @@ $(document).ready(function () {
   searchShowMore.addEventListener("click", (e) => {
     userInput = $(".userInput").val();
     var clearList = $(".card");
-    pageNumber++;
     // clearList.remove();
     e.preventDefault();
     console.log(userInput);
@@ -845,7 +844,7 @@ $(document).ready(function () {
 
     localShowMore.addEventListener("click", (e) => {
       var clearList = $(".card");
-      pageNumber++;
+      
       // clearList.remove();
       e.preventDefault();
       console.log(userInput);
