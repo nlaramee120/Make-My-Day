@@ -846,7 +846,7 @@ $(document).ready(function () {
 
     localShowMore.addEventListener("click", (e) => {
       var clearList = $(".card");
-      
+
       // clearList.remove();
       e.preventDefault();
       console.log(userInput);
@@ -1096,7 +1096,7 @@ $(document).ready(function () {
 
             let buttonId = "#button" + i;
             let test = location;
-            
+
             // Identifies the buttonId which is a future HTML element
             $(document).on("click", buttonId, function () {
               console.log(test);
