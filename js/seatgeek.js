@@ -123,7 +123,8 @@ $(document).ready(function () {
           let title = data.events[i].short_title;
           newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
-          let date = data.events[i].datetime_local;
+          let origDate = data.events[i].datetime_local;
+          let date = origDate.split("T")[0] + ", " + origDate.split("T")[1];
 
           newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
@@ -153,9 +154,6 @@ $(document).ready(function () {
           // Begin event listener for each unqie "save button"
           $(document).on("click", buttonId, function () {
             console.log(test);
-
-            let newDate = new Date(date);
-            let dateString = newDate.toString("MMMM yyyy");
 
             // Begin conditional statement to add event information to the "Saved Events" modal
             if (listItem1Used === false) {
@@ -347,7 +345,8 @@ $(document).ready(function () {
           let title = data.events[i].short_title;
           newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
-          let date = data.events[i].datetime_local;
+          let origDate = data.events[i].datetime_local;
+          let date = origDate.split("T")[0] + ", " + origDate.split("T")[1];
 
           newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
@@ -376,9 +375,6 @@ $(document).ready(function () {
           // Begin event listener for each unqie "save button" for the newly added events in list
           $(document).on("click", buttonId, function () {
             console.log(test);
-
-            let newDate = new Date(date);
-            let dateString = newDate.toString("MMMM yyyy");
 
             // Begin conditional statement to add event information to the "Saved Events" modal for thhe newly added events in list
             if (listItem1Used === false) {
@@ -525,7 +521,8 @@ $(document).ready(function () {
           let title = data.events[i].short_title;
           newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
-          let date = data.events[i].datetime_local;
+          let origDate = data.events[i].datetime_local;
+          let date = origDate.split("T")[0] + ", " + origDate.split("T")[1];
 
           newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
@@ -554,9 +551,6 @@ $(document).ready(function () {
           // Begin event listener for each unqie "save button" for the newly added events in list
           $(document).on("click", buttonId, function () {
             console.log(test);
-
-            let newDate = new Date(date);
-            let dateString = newDate.toString("MMMM yyyy");
 
             // Begin conditional statement to add event information to the "Saved Events" modal for the newly added events in list
             if (listItem1Used === false) {
@@ -697,7 +691,8 @@ $(document).ready(function () {
           newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
           // var dateConv = moment().format("MMM Do, YYYY, hh:mm:");
-          let date = data.events[i].datetime_local;
+          let origDate = data.events[i].datetime_local;
+          let date = origDate.split("T")[0] + ", " + origDate.split("T")[1];
 
           newCardBody.append("<p class='card-text'>" + "Date: " + date + "<p>");
 
@@ -725,9 +720,6 @@ $(document).ready(function () {
 
           $(document).on("click", buttonId, function () {
             console.log(test);
-
-            let newDate = new Date(date);
-            let dateString = newDate.toString("MMMM yyyy");
 
             if (listItem1Used === false) {
               listItem1.innerHTML =
@@ -903,7 +895,8 @@ $(document).ready(function () {
             let title = data.events[i].short_title;
             newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
-            let date = data.events[i].datetime_local;
+            let origDate = data.events[i].datetime_local;
+            let date = origDate.split("T")[0] + ", " + origDate.split("T")[1];
 
             newCardBody.append(
               "<p class='card-text'>" + "Date: " + date + "<p>"
@@ -1069,7 +1062,8 @@ $(document).ready(function () {
             let title = data.events[i].short_title;
             newCardBody.append("<h3 class='card-title'>" + title + "<h3>");
 
-            let date = data.events[i].datetime_local;
+            let origDate = data.events[i].datetime_local;
+            let date = origDate.split("T")[0] + ", " + origDate.split("T")[1];
 
             newCardBody.append(
               "<p class='card-text'>" + "Date: " + date + "<p>"
