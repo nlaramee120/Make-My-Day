@@ -1,5 +1,5 @@
 # Make My Day
-Created By: James Capadocia, Nick Laramee, Jonathan Lino, and Joseph Fabrini
+Collaborated By: James Capadocia (https://github.com/jcapadocia3), Nick Laramee (https://github.com/nlaramee120), Jonathan Lino (https://github.com/BionicMatedorX), and Joseph Fabrini (https://github.com/Platinum47)
 <br>
 <br>
 
