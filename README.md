@@ -21,6 +21,16 @@ https://nlaramee120.github.io/Make-My-Day/
 # About Our App
     This application was created for users to find events in their local area or other cities within the U.S. The app was created with a simple and sleek user interface for the user to easily navigate it's features from the first time using it. Based on the user's search choice, a list of events will populate with basic event information as well as a related picture for the event. Aside from event information, the user will also be presented with a redirecting link to purchase tickets for the event and an option to save the event if they are interested in it but have yet to make a decision to purchase tickets. Along with the events populating, the user will also be presented with a 5 day weather forecast to make an informed decision for attending an indoor or outdoor event.
     
+# Technologies Used
+
+- HTML
+- CSS
+- Javascript
+- GetSkeleton API
+- Bootstrap API
+- SeatGeek API
+- OpenWeather API
+    
 # App Flow and Usage
     - When user open the homepage they are presented with an introduction page explaining the app and a "Get Started" button that will direct them to the app's main page and functionality.
 
