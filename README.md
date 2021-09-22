@@ -49,3 +49,5 @@ https://nlaramee120.github.io/Make-My-Day/
 
     - As the user scrolls passed the current events listed, they will be presented with a 5 day forecast based on how the user initiated the search (either by city or their current geolocation).
 
+## License
+- Licensed under the [MIT License](LICENSE)
